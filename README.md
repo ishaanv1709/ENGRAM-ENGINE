@@ -24,7 +24,7 @@ ENGRAM ENGINE follows the graph from that fact to the tasks that consumed it. Th
 
 This is the central submission: **remember the evidence, coordinate the work, and change the action when knowledge changes.** The public evidence includes the completed model-driven workflow, actual process restart, memory correction, resulting plan, procedure reuse and the earlier failed attempts.
 
-> **Hosting status:** The website, quickstart and published evidence are served from Cloudflare at the permanent address above. The live API, workers and databases currently run on the local machine through a protected tunnel. R2 is activated and private artifact storage has passed real integrity, authorization and source-snapshot checks. Full laptop-independent backend hosting is not complete. Provider-backed work needs the visitor's own keys and available quota.
+> **Hosting status:** The website, quickstart and published evidence are served from Cloudflare at the permanent address above. The live API, workers and databases currently run on the local machine through a protected tunnel. R2 is activated and private artifact storage has passed real integrity, authorization and source-snapshot checks. Full laptop-independent backend hosting is not complete. The latest local host storage failure has temporarily made Start building unavailable (HTTP 503); public home, quickstart, article and evidence pages remain online. Provider-backed work needs the visitor's own keys and available quota.
 
 ## Why this fits Track 2
 

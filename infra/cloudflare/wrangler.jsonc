@@ -1,0 +1,22 @@
+{
+  "name": "engram-collective",
+  "account_id": "0759656c9efc281f7558f048f2b69b85",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-18",
+  "workers_dev": true,
+  "preview_urls": false,
+  "assets": {
+    "directory": "../../frontend/dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": true
+  },
+  "r2_buckets": [
+    { "binding": "ARTIFACTS", "bucket_name": "engram-collective-artifacts" }
+  ],
+  "vars": {
+    "API_ORIGIN": "https://furnished-reach-stylish-stocks.trycloudflare.com",
+    "BACKEND_HOSTING": "laptop-tunnel"
+  },
+  "observability": { "enabled": false }
+}

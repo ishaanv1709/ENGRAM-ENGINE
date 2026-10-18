@@ -1,0 +1,437 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ENGRAM ENGINE | Live submission evidence</title>
+<style>body{margin:0;background:#0d1511;color:#e3e8de;font:17px/1.65 system-ui}main{max-width:1050px;margin:auto;padding:48px 24px}h1{font-size:clamp(34px,6vw,64px);line-height:1.1}h2{color:#c1dda7;margin-top:48px}.kicker{color:#c1dda7;letter-spacing:.12em}section,article{border:1px solid #354331;border-radius:16px;padding:24px;margin:20px 0}table{border-collapse:collapse;width:100%;font-size:15px}td,th{text-align:left;border-bottom:1px solid #354331;padding:12px}.scroll{overflow:auto}pre{white-space:pre-wrap;word-break:break-word;font-size:13px}a{color:#c1dda7}.flow{display:flex;gap:12px;flex-wrap:wrap}.flow span{border:1px solid #76956b;padding:12px;border-radius:12px}small{color:#a7b3a2;overflow-wrap:anywhere}</style>
+<main><img src="brand.svg" width="56" height="56" alt="ENGRAM memory loop"><p class="kicker">TRACK 2 / AGENT MEMORY AND COORDINATION</p><h1>The release that remembers.</h1>
+<p>A real agent team, a persisted correction, a process restart and a measured procedure comparison.</p>
+<p><strong>Evidence checks passed.</strong> Initial model: qwen/qwen3.8-27b. Completion and comparison model: openai/gpt-oss-20b. Completed: 2026-10-17T21:46:23.920548+00:00.</p>
+
+<section><p class="kicker">NEW / TRACK 2 MEMORY AND COORDINATION</p><h2>Remember less. Preserve the exact reason.</h2>
+<p>Final local regression: 40 backend checks passed; one optional provider test skipped. Eight local browser checks and one public HTTPS browser check passed. The provider-backed 120B workflow and four live 20B pairs are documented separately below.</p>
+<p>Tasks can bind to explicit memory references and pinned obligations. A compact memory capsule carries actionable instructions, versions, source IDs and artifact hashes. Durable passports record the selected revisions and context fingerprint. A correction racing with context preparation is rejected before that stale snapshot reaches the next model step.</p>
+<details><summary>Inspect an actual startup passport</summary><pre>{
+  &quot;mode&quot;: &quot;startup_references&quot;,
+  &quot;digest&quot;: &quot;4ea53075d5ef775f34f2faf8a8f5cd60440a9d3ba9e21c9da816040c9aaa3788&quot;,
+  &quot;records&quot;: [
+    {
+      &quot;id&quot;: &quot;3c324fb0-32ec-4c39-bb27-3e62e5d13b25&quot;,
+      &quot;status&quot;: &quot;active&quot;,
+      &quot;revision&quot;: 2,
+      &quot;content_sha256&quot;: &quot;9d37515c19fc5d00abe9c8330d5c4a01e1c8eefd109e18c7614473fa4916517a&quot;
+    }
+  ],
+  &quot;project_id&quot;: &quot;d2e5409a-fbd2-4cd0-83c8-1566637b0e46&quot;,
+  &quot;budget_tokens&quot;: 2000,
+  &quot;omitted_count&quot;: 0,
+  &quot;capsule_sha256&quot;: &quot;00978c0261badb19c2b6a58ba5367d3ffd24b2da9746a5b2011e3991ca5cfaa4&quot;,
+  &quot;context_tokens&quot;: 471,
+  &quot;source_record_tokens&quot;: 1564
+}</pre></details>
+<h3>Four real matched live pairs, eight successful verifier sessions</h3><p>Groq openai/gpt-oss-20b; identical bound files and ten passing pytest cases per session. Alternating order, no discarded warmup, zero failed adapter receipts; SDK-internal retry attempts are not individually counted. Automatic post-run curation is disabled in both arms.</p>
+<div class="scroll"><table><tr><th>Metric</th><th>Baseline median</th><th>Capsule reuse median</th><th>Median paired savings</th></tr><tr><th>Provider calls</th><td>4.0</td><td>2.0</td><td>+2.0</td></tr><tr><th>Observed tokens</th><td>1,782.0</td><td>1,416.5</td><td>+365.5</td></tr><tr><th>Elapsed seconds</th><td>28.4</td><td>26.4</td><td>+2.0</td></tr></table></div>
+<p>50% fewer provider calls and about 20.5% fewer median tokens. Three latency pairs favored reuse; one was slower. The median paired time difference was 2.001 seconds. This is stronger evidence for call/token efficiency than for general speed.</p>
+<details><summary>Every paired observation</summary><div class="scroll"><table><tr><th>Pair</th><th>Order</th><th>Token savings</th><th>Time savings, s</th></tr><tr><td>1</td><td>reuse â†’ baseline</td><td>+359</td><td>-7.810</td></tr><tr><td>2</td><td>baseline â†’ reuse</td><td>+324</td><td>+1.524</td></tr><tr><td>3</td><td>reuse â†’ baseline</td><td>+418</td><td>+7.646</td></tr><tr><td>4</td><td>baseline â†’ reuse</td><td>+372</td><td>+2.478</td></tr></table></div><p>Four sequential live pairs; alternating reuse-first / baseline-first, no discarded warmup, same model, files and ten-test acceptance. Known-correct artifact baseline, not code-generation avoidance. Memory capsules and preflight preparation are production behavior. Both arms disable automatic post-run curation. Timing includes queue/startup, provider waits and execution until completion; not container cleanup. Stop on failure, keep its receipts and unknown billed usage. No general cost/latency guarantee.</p></details></section>
+<section><h2>A correction changes one consumer, not all sixteen</h2>
+<p>In the controlled real-store fixture, eight competing corrections produced one committed replacement and seven stale-revision conflicts. The graph identified exactly one consumer of the changed fact. Fifteen consumers bound to other references were preserved.</p>
+<svg viewBox="0 0 920 240" role="img" aria-label="One approval fact changes one dependent consumer; fifteen unrelated reference consumers are preserved" style="width:100%;height:auto"><g fill="none" stroke="#76956b" stroke-width="2"><rect x="15" y="20" width="340" height="80" rx="14"/><rect x="560" y="20" width="345" height="80" rx="14"/><path d="M355 60H560"/><rect x="15" y="145" width="340" height="80" rx="14"/><rect x="560" y="145" width="345" height="80" rx="14"/><path d="M355 185H560"/></g><g fill="#e3e8de" font-family="system-ui" font-size="19"><text x="35" y="55">Approval: Maya â†’ Priya</text><text x="35" y="82">Supplied source correction</text><text x="580" y="55">1 exact dependent consumer</text><text x="580" y="82">Marked stale; lease fenced</text><text x="35" y="180">15 other reference records</text><text x="35" y="207">Different consumed evidence</text><text x="580" y="180">15 unrelated consumers</text><text x="580" y="207">Preserved at correction time</text></g></svg>
+<p>This fixture directly invokes production functions without model inference. It establishes selective dependency handling; it does not claim perfect semantic relevance for unrestricted retrieval.</p></section>
+<section><h2>One handoff, even when delivery repeats</h2><div class="flow"><span>Awaiting envelope</span><span>Packet committed</span><span>Receiver becomes claimable</span><span>Revision checks</span><span>One preserved acknowledgement</span></div>
+<p>20 concurrent identical delivery attempts produced one receiver and one envelope. A deliberately interrupted delivery survived a real API/worker restart, resumed into the same receiver, and retained its first acknowledgement when replayed. The fixture was then cancelled for cleanup; this is delivery/recovery evidence, not a fabricated model completion.</p>
+<details><summary>Actual restart and acknowledgement receipts</summary><pre>{
+  &quot;same_receiver&quot;: true,
+  &quot;envelope_committed_before_claimable&quot;: true,
+  &quot;acknowledgements&quot;: 1,
+  &quot;first_acknowledgement_preserved&quot;: true,
+  &quot;cross_tenant_denial&quot;: 404,
+  &quot;persisted_context_receipts&quot;: 17,
+  &quot;provider_calls&quot;: 0
+}</pre></details></section>
+<section><h2>Measured store concurrency</h2><div class="scroll"><table><tr><th>Operation</th><th>Count</th><th>Concurrency</th><th>Total seconds</th><th>p95 ms</th></tr><tr><td>Direct-reference context reads</td><td>128</td><td>8</td><td>1.810</td><td>968.1</td></tr><tr><td>Semantic writes with CPU embeddings</td><td>16</td><td>8</td><td>20.968</td><td>14605.0</td></tr></table></div>
+<p>Zero operation errors. The read trial measured 70.7 direct-reference reads/second on this workstation, including provenance registration. It is not full semantic-search or LLM throughput. CPU embeddings dominate write time.</p></section>
+<section><h2>New 120B team workflow completed across a restart</h2>
+<p>The new private-memory team used openai/gpt-oss-120b. A verifier reused the checked calculator, a researcher handed sourced approval work to a curator, and real Mem0 write-back completed. After restarting both app processes, a supplied correction changed Maya to Priya, Mem0 reconciled the derived approval knowledge and the replacement plan returned Priya.</p>
+<p>The graph returned 5 affected approval-context task references, including prior attempt history; actual resulting statuses are retained in the JSON. The 1 unrelated calculator verifier remained completed. The original root retained 24 checkpoint rows before restart. Exact packets, acknowledgements, process IDs and model/check receipts are in the JSON.</p>
+<p>Earlier quota and scope/budget attempts remain recorded. This is a completed recovered workflow, not a first-attempt success. The four-pair savings above remain measurements of Groq20B, not estimates of 120B performance.</p><figure><a href="track2/track2-120b-causal-action.png"><img src="track2/track2-120b-causal-action.png" alt="Actual 120B replacement plan changes ASTER approval from Maya to Priya after restart" style="width:100%;max-height:700px;object-fit:contain"></a></figure></section>
+<section><h2>Inspect the new working interface</h2><p>The existing Procedures page now includes compact memory passports and durable handoff receipts, without adding more navigation destinations.</p><figure><a href="track2/track2-passports-desktop.png"><img src="track2/track2-passports-desktop.png" alt="Actual persisted memory passports and recovered handoff receipts" style="width:100%;max-height:650px;object-fit:contain"></a></figure></section>
+<p><a href="track2-upgrade.json">Download the new sanitized measurements, actual test output and provider receipts</a></p>
+<h2>Earlier recovered end-to-end scenario</h2><section><h2>One fact changes the action</h2><div class="flow"><span>Agent routes approval to Maya</span><span>New source names Priya</span><span>Graph finds old readers</span><span>Old action becomes stale</span><span>Restart</span><span>New agent plan routes to Priya</span></div>
+<p>The source correction is supplied explicitly. The agent recommendations and their execution receipts are real.</p>
+<details><summary>Original recommendation</summary><pre>{
+  &quot;status&quot;: &quot;completed&quot;,
+  &quot;result&quot;: {
+    &quot;summary&quot;: &quot;## Release Approval Routing Recommendation\n\n**Recommendation:** Route the ORCHID release approval request to **Maya**.\n\n**Basis:**\n- Memory `06b6e0e9-bb5b-47d9-8488-6005cac243e5` (semantic, category: critical, status: active, confidence: 1.0) states: *\&quot;orchid release: approval owner = Maya\&quot;*.\n- This is a resolved claim under the `active-sources/latest-observation-v1` policy, sourced from `551232aa-5a30-4a03-8956-9613674e0b44`.\n- Corroborated by related memories: `68afd07b-bac6-41d6-9ea2-2d50e83a0a0f` (\&quot;Maya owns approval for the ORCHID release\&quot;) and `3ecf5d3a-9564-4f84-9f8e-d19af67995a1` (\&quot;ORCHID release roster: Maya owns release approval\&quot;).\n\n**Routing action:** Direct the ORCHID release approval to Maya as the designated approval owner. No competing claims or unresolved conflicts were found in the retrieved memories.\n\n**Citations:**\n- Memory ID: `06b6e0e9-bb5b-47d9-8488-6005cac243e5`\n- Source ID: `551232aa-5a30-4a03-8956-9613674e0b44`\n- Corroborating memory IDs: `68afd07b-bac6-41d6-9ea2-2d50e83a0a0f`, `3ecf5d3a-9564-4f84-9f8e-d19af67995a1`, `88109ac0-10ce-4e9c-b798-4e9e3acd6f44`\n\nNo tasks dispatched, no browsing performed, per instructions.&quot;,
+    &quot;limitations&quot;: [],
+    &quot;source_urls&quot;: [],
+    &quot;artifact_ids&quot;: [],
+    &quot;evidence_ids&quot;: [
+      &quot;06b6e0e9-bb5b-47d9-8488-6005cac243e5&quot;,
+      &quot;3ecf5d3a-9564-4f84-9f8e-d19af67995a1&quot;,
+      &quot;4548b058-52b6-4212-88ef-f09f347b38f3&quot;,
+      &quot;68afd07b-bac6-41d6-9ea2-2d50e83a0a0f&quot;,
+      &quot;88109ac0-10ce-4e9c-b798-4e9e3acd6f44&quot;
+    ],
+    &quot;needs_handoff&quot;: false,
+    &quot;check_event_ids&quot;: [],
+    &quot;outcome_memory_id&quot;: &quot;b17f9ba7-cf86-468a-a492-b1d5c1fe928c&quot;
+  }
+}</pre></details>
+<details><summary>Actual dependency and replacement edges</summary><pre>{
+  &quot;reader&quot;: [
+    [
+      &quot;06911f0e-4537-46e0-9707-86bbe2bd406a&quot;,
+      &quot;06b6e0e9-bb5b-47d9-8488-6005cac243e5&quot;
+    ]
+  ],
+  &quot;replan&quot;: [
+    [
+      &quot;ff4a5ee2-b8e8-43be-9a05-83234cea8537&quot;,
+      &quot;06911f0e-4537-46e0-9707-86bbe2bd406a&quot;
+    ]
+  ],
+  &quot;stale&quot;: {
+    &quot;status&quot;: &quot;stale&quot;,
+    &quot;revision&quot;: 2
+  }
+}</pre></details>
+<details><summary>Revised recommendation after restart</summary><pre>{
+  &quot;status&quot;: &quot;completed&quot;,
+  &quot;result&quot;: {
+    &quot;summary&quot;: &quot;**Concrete decision change**\n\nThe ORCHID release approval routing has been updated to reflect the new approval owner:\n\n- **Previous owner (incorrect):** Maya  \n- **Corrected owner (current evidence):** Priya  \n\nThis change is captured in the semantic memory `bb57aae6-d2b7-492a-a7ba-73ebf72de4ac`, which records the claim \u201corchid release: approval owner = Priya\u201d with confidence\u202f1.0 and status\u202factive.\n\n**Corrected recommendation**\n\nThe recommendation for routing the ORCHID release approval request is now:\n\n&gt; **Route the ORCHID release approval request to\u202fPriya.**\n\nThis recommendation is based on the updated claim in memory `bb57aae6-d2b7-492a-a7ba-73ebf72de4ac`. No additional work (documentation searches, code rebuilds, or artifact re\u2011verification) is required because the change only affects approval routing, not the implementation of the calculator artifact or its tests.\n\n**Evidence IDs**\n\n- Claim memory: `bb57aae6-d2b7-492a-a7ba-73ebf72de4ac`  \n- Previous recommendation (before correction): `06911f0e-4537-46e0-9707-86bbe2bd406a` (now superseded)  \n\nAll artifacts (`calculator.py`, `test_calculator.py`) and their verification reports remain valid and unchanged.&quot;,
+    &quot;limitations&quot;: [],
+    &quot;source_urls&quot;: [],
+    &quot;artifact_ids&quot;: [],
+    &quot;evidence_ids&quot;: [
+      &quot;291ffa9f-44c0-46fa-b481-19ba751d4c1c&quot;,
+      &quot;3c324fb0-32ec-4c39-bb27-3e62e5d13b25&quot;,
+      &quot;536762dc-2d2f-4f2d-9837-622918637b37&quot;,
+      &quot;77f06c7b-08ba-452a-8b15-51b913eb91ca&quot;,
+      &quot;bb57aae6-d2b7-492a-a7ba-73ebf72de4ac&quot;
+    ],
+    &quot;needs_handoff&quot;: false,
+    &quot;check_event_ids&quot;: [],
+    &quot;outcome_memory_id&quot;: &quot;246db43e-1e90-47ad-8714-82ca4ab6fd20&quot;
+  }
+}</pre></details></section>
+<section><h2>Historical single-pair comparison before capsules</h2><p>One sequential live-model comparison: known exact artifact bundle versus active verified procedure. Identical artifacts and pytest command; same provider/model. Counts include policy/Mem0 calls attributed to each direct verifier run. Automatic post-run curation is disabled for both arms to isolate verification and avoid background inference contention. Wall timing includes queue, startup, model waits and checks; queue/startup is also shown separately. No code-generation savings claim.</p><div class="scroll"><table><thead><tr><th>Metric</th><th>Known artifacts</th><th>Verified procedure</th><th>Signed savings</th></tr></thead><tbody><tr><th>Observed provider calls</th><td>4</td><td>3</td><td>1</td></tr><tr><th>Observed provider tokens</th><td>1823</td><td>5034</td><td>-3211</td></tr><tr><th>Elapsed seconds</th><td>66.406943</td><td>53.917966</td><td>12.488976999999998</td></tr></tbody></table></div>
+<p>Positive differences favor reuse. Negative differences mean overhead. One pair does not establish a reliable speedup. Failed requests can have unknown billed usage; SDK retry attempts are not counted individually.</p>
+<details><summary>Exact checks, provider receipts and artifact hashes</summary><pre>{
+  &quot;procedure_id&quot;: &quot;3c324fb0-32ec-4c39-bb27-3e62e5d13b25&quot;,
+  &quot;version&quot;: 1,
+  &quot;manifest&quot;: [
+    {
+      &quot;id&quot;: &quot;1d563d26-2667-4a4e-b4a8-c17e95037fbe&quot;,
+      &quot;name&quot;: &quot;calculator.py&quot;,
+      &quot;run_id&quot;: &quot;f9034658-b64b-4089-b58c-50823e5abb2b&quot;,
+      &quot;sha256&quot;: &quot;497cdc42a5bc17a3603a6e2632b552a293921d81e34afa243891d01c5510642f&quot;
+    },
+    {
+      &quot;id&quot;: &quot;aa671b64-5ffb-485a-b3cc-f64217e982d4&quot;,
+      &quot;name&quot;: &quot;test_calculator.py&quot;,
+      &quot;run_id&quot;: &quot;f9034658-b64b-4089-b58c-50823e5abb2b&quot;,
+      &quot;sha256&quot;: &quot;599a60ae269bcc95a4ac9510886fda53f5bdc0f546f3a84d9ca4345ff011ffa9&quot;
+    }
+  ],
+  &quot;baseline_run&quot;: &quot;a8beddc0-feb0-482a-9979-e4b01ec16985&quot;,
+  &quot;method&quot;: &quot;One sequential live-model comparison: known exact artifact bundle versus active verified procedure. Identical artifacts and pytest command; same provider/model. Counts include policy/Mem0 calls attributed to each direct verifier run. Automatic post-run curation is disabled for both arms to isolate verification and avoid background inference contention. Wall timing includes queue, startup, model waits and checks; queue/startup is also shown separately. No code-generation savings claim.&quot;,
+  &quot;limitations&quot;: [
+    &quot;One pair is observational, not a reliable speed benchmark&quot;,
+    &quot;Fixed baseline-first order and warm shared services can affect timing; no randomized multi-pair estimate&quot;,
+    &quot;Provider failures and internal SDK retries may have unknown billed tokens&quot;,
+    &quot;Calls made before receipt instrumentation are excluded and disclosed&quot;
+  ],
+  &quot;reuse_run&quot;: &quot;34fddc6e-83ba-4937-96b3-afda0db7148a&quot;,
+  &quot;trials&quot;: {
+    &quot;baseline&quot;: {
+      &quot;run_id&quot;: &quot;a8beddc0-feb0-482a-9979-e4b01ec16985&quot;,
+      &quot;status&quot;: &quot;completed&quot;,
+      &quot;model&quot;: &quot;openai/gpt-oss-20b&quot;,
+      &quot;provider_calls_observed&quot;: 4,
+      &quot;successful_calls_with_usage&quot;: 4,
+      &quot;provider_failed_calls&quot;: 0,
+      &quot;model_tokens_observed&quot;: 1823,
+      &quot;elapsed_seconds&quot;: 66.406943,
+      &quot;active_agent_seconds&quot;: 45.822651,
+      &quot;queue_and_prepare_seconds&quot;: 20.584292,
+      &quot;check_event_ids&quot;: [
+        3059
+      ],
+      &quot;checks&quot;: [
+        {
+          &quot;event_id&quot;: 3059,
+          &quot;command&quot;: &quot;python -m pytest -q&quot;,
+          &quot;exit_code&quot;: 0,
+          &quot;stdout&quot;: &quot;..........                                                               [100%]\n10 passed in 0.02s\n&quot;,
+          &quot;stderr&quot;: &quot;&quot;
+        }
+      ],
+      &quot;agent_loop&quot;: {
+        &quot;tool_executions&quot;: 1,
+        &quot;file_writes&quot;: 2,
+        &quot;model_calls&quot;: 4,
+        &quot;model_tokens&quot;: 1823
+      },
+      &quot;provider_receipt_event_ids&quot;: [
+        3047,
+        3052,
+        3057,
+        3061
+      ],
+      &quot;provider_receipts&quot;: [
+        {
+          &quot;event_id&quot;: 3047,
+          &quot;model&quot;: &quot;openai/gpt-oss-20b&quot;,
+          &quot;usage&quot;: {
+            &quot;queue_time&quot;: 0.396357767,
+            &quot;total_time&quot;: 0.084102488,
+            &quot;prompt_time&quot;: 0.012807079,
+            &quot;total_tokens&quot;: 329,
+            &quot;prompt_tokens&quot;: 261,
+            &quot;completion_time&quot;: 0.071295409,
+            &quot;completion_tokens&quot;: 68,
+            &quot;prompt_tokens_details&quot;: null,
+            &quot;completion_tokens_details&quot;: {
+              &quot;audio_tokens&quot;: null,
+              &quot;reasoning_tokens&quot;: 15,
+              &quot;accepted_prediction_tokens&quot;: null,
+              &quot;rejected_prediction_tokens&quot;: null
+            }
+          },
+          &quot;status&quot;: &quot;success&quot;,
+          &quot;adapter&quot;: &quot;groq&quot;,
+          &quot;elapsed_ms&quot;: 798.6672999104485,
+          &quot;sdk_internal_retries_included_in_count&quot;: false
+        },
+        {
+          &quot;event_id&quot;: 3052,
+          &quot;model&quot;: &quot;openai/gpt-oss-20b&quot;,
+          &quot;usage&quot;: {
+            &quot;queue_time&quot;: 0.395572199,
+            &quot;total_time&quot;: 0.083105011,
+            &quot;prompt_time&quot;: 0.012937937,
+            &quot;total_tokens&quot;: 290,
+            &quot;prompt_tokens&quot;: 224,
+            &quot;completion_time&quot;: 0.070167074,
+            &quot;completion_tokens&quot;: 66,
+            &quot;prompt_tokens_details&quot;: null,
+            &quot;completion_tokens_details&quot;: {
+              &quot;audio_tokens&quot;: null,
+              &quot;reasoning_tokens&quot;: 14,
+              &quot;accepted_prediction_tokens&quot;: null,
+              &quot;rejected_prediction_tokens&quot;: null
+            }
+          },
+          &quot;status&quot;: &quot;success&quot;,
+          &quot;adapter&quot;: &quot;groq&quot;,
+          &quot;elapsed_ms&quot;: 604.8382000299171,
+          &quot;sdk_internal_retries_included_in_count&quot;: false
+        },
+        {
+          &quot;event_id&quot;: 3057,
+          &quot;model&quot;: &quot;openai/gpt-oss-20b&quot;,
+          &quot;usage&quot;: {
+            &quot;queue_time&quot;: 0.395950832,
+            &quot;total_time&quot;: 0.067372517,
+            &quot;prompt_time&quot;: 0.023186485,
+            &quot;total_tokens&quot;: 458,
+            &quot;prompt_tokens&quot;: 420,
+            &quot;completion_time&quot;: 0.044186032,
+            &quot;completion_tokens&quot;: 38,
+            &quot;prompt_tokens_details&quot;: null,
+            &quot;completion_tokens_details&quot;: {
+              &quot;audio_tokens&quot;: null,
+              &quot;reasoning_tokens&quot;: 4,
+              &quot;accepted_prediction_tokens&quot;: null,
+              &quot;rejected_prediction_tokens&quot;: null
+            }
+          },
+          &quot;status&quot;: &quot;success&quot;,
+          &quot;adapter&quot;: &quot;groq&quot;,
+          &quot;elapsed_ms&quot;: 601.1151999700814,
+          &quot;sdk_internal_retries_included_in_count&quot;: false
+        },
+        {
+          &quot;event_id&quot;: 3061,
+          &quot;model&quot;: &quot;openai/gpt-oss-20b&quot;,
+          &quot;usage&quot;: {
+            &quot;queue_time&quot;: 0.395509359,
+            &quot;total_time&quot;: 0.354274362,
+            &quot;prompt_time&quot;: 0.021969927,
+            &quot;total_tokens&quot;: 746,
+            &quot;prompt_tokens&quot;: 426,
+            &quot;completion_time&quot;: 0.332304435,
+            &quot;completion_tokens&quot;: 320,
+            &quot;prompt_tokens_details&quot;: null,
+            &quot;completion_tokens_details&quot;: {
+              &quot;audio_tokens&quot;: null,
+              &quot;reasoning_tokens&quot;: 10,
+              &quot;accepted_prediction_tokens&quot;: null,
+              &quot;rejected_prediction_tokens&quot;: null
+            }
+          },
+          &quot;status&quot;: &quot;success&quot;,
+          &quot;adapter&quot;: &quot;groq&quot;,
+          &quot;elapsed_ms&quot;: 2412.078999914229,
+          &quot;sdk_internal_retries_included_in_count&quot;: false
+        }
+      ]
+    },
+    &quot;reuse&quot;: {
+      &quot;run_id&quot;: &quot;34fddc6e-83ba-4937-96b3-afda0db7148a&quot;,
+      &quot;status&quot;: &quot;completed&quot;,
+      &quot;model&quot;: &quot;openai/gpt-oss-20b&quot;,
+      &quot;provider_calls_observed&quot;: 3,
+      &quot;successful_calls_with_usage&quot;: 3,
+      &quot;provider_failed_calls&quot;: 0,
+      &quot;model_tokens_observed&quot;: 5034,
+      &quot;elapsed_seconds&quot;: 53.917966,
+      &quot;active_agent_seconds&quot;: 33.486398,
+      &quot;queue_and_prepare_seconds&quot;: 20.431568,
+      &quot;check_event_ids&quot;: [
+        3080
+      ],
+      &quot;checks&quot;: [
+        {
+          &quot;event_id&quot;: 3080,
+          &quot;command&quot;: &quot;python -m pytest -q&quot;,
+          &quot;exit_code&quot;: 0,
+          &quot;stdout&quot;: &quot;..........                                                               [100%]\n10 passed in 0.02s\n&quot;,
+          &quot;stderr&quot;: &quot;&quot;
+        }
+      ],
+      &quot;agent_loop&quot;: {
+        &quot;tool_executions&quot;: 1,
+        &quot;file_writes&quot;: 2,
+        &quot;model_calls&quot;: 3,
+        &quot;model_tokens&quot;: 5034
+      },
+      &quot;provider_receipt_event_ids&quot;: [
+        3074,
+        3078,
+        3082
+      ],
+      &quot;provider_receipts&quot;: [
+        {
+          &quot;event_id&quot;: 3074,
+          &quot;model&quot;: &quot;openai/gpt-oss-20b&quot;,
+          &quot;usage&quot;: {
+            &quot;queue_time&quot;: 0.337030554,
+            &quot;total_time&quot;: 0.288725579,
+            &quot;prompt_time&quot;: 0.202254122,
+            &quot;total_tokens&quot;: 3602,
+            &quot;prompt_tokens&quot;: 3518,
+            &quot;completion_time&quot;: 0.086471457,
+            &quot;completion_tokens&quot;: 84,
+            &quot;prompt_tokens_details&quot;: {
+              &quot;audio_tokens&quot;: null,
+              &quot;cached_tokens&quot;: 256
+            },
+            &quot;completion_tokens_details&quot;: {
+              &quot;audio_tokens&quot;: null,
+              &quot;reasoning_tokens&quot;: 36,
+              &quot;accepted_prediction_tokens&quot;: null,
+              &quot;rejected_prediction_tokens&quot;: null
+            }
+          },
+          &quot;status&quot;: &quot;success&quot;,
+          &quot;adapter&quot;: &quot;groq&quot;,
+          &quot;elapsed_ms&quot;: 2169.556900043972,
+          &quot;sdk_internal_retries_included_in_count&quot;: false
+        },
+        {
+          &quot;event_id&quot;: 3078,
+          &quot;model&quot;: &quot;openai/gpt-oss-20b&quot;,
+          &quot;usage&quot;: {
+            &quot;queue_time&quot;: 0.314432837,
+            &quot;total_time&quot;: 0.074384313,
+            &quot;prompt_time&quot;: 0.033461059,
+            &quot;total_tokens&quot;: 662,
+            &quot;prompt_tokens&quot;: 622,
+            &quot;completion_time&quot;: 0.040923254,
+            &quot;completion_tokens&quot;: 40,
+            &quot;prompt_tokens_details&quot;: null,
+            &quot;completion_tokens_details&quot;: {
+              &quot;audio_tokens&quot;: null,
+              &quot;reasoning_tokens&quot;: 6,
+              &quot;accepted_prediction_tokens&quot;: null,
+              &quot;rejected_prediction_tokens&quot;: null
+            }
+          },
+          &quot;status&quot;: &quot;success&quot;,
+          &quot;adapter&quot;: &quot;groq&quot;,
+          &quot;elapsed_ms&quot;: 517.024299944751,
+          &quot;sdk_internal_retries_included_in_count&quot;: false
+        },
+        {
+          &quot;event_id&quot;: 3082,
+          &quot;model&quot;: &quot;openai/gpt-oss-20b&quot;,
+          &quot;usage&quot;: {
+            &quot;queue_time&quot;: 0.313983265,
+            &quot;total_time&quot;: 0.370423022,
+            &quot;prompt_time&quot;: 0.024726212,
+            &quot;total_tokens&quot;: 770,
+            &quot;prompt_tokens&quot;: 452,
+            &quot;completion_time&quot;: 0.34569681,
+            &quot;completion_tokens&quot;: 318,
+            &quot;prompt_tokens_details&quot;: null,
+            &quot;completion_tokens_details&quot;: {
+              &quot;audio_tokens&quot;: null,
+              &quot;reasoning_tokens&quot;: 10,
+              &quot;accepted_prediction_tokens&quot;: null,
+              &quot;rejected_prediction_tokens&quot;: null
+            }
+          },
+          &quot;status&quot;: &quot;success&quot;,
+          &quot;adapter&quot;: &quot;groq&quot;,
+          &quot;elapsed_ms&quot;: 2788.533000042662,
+          &quot;sdk_internal_retries_included_in_count&quot;: false
+        }
+      ]
+    }
+  },
+  &quot;signed_savings&quot;: {
+    &quot;provider_calls_observed&quot;: 1,
+    &quot;model_tokens_observed&quot;: -3211,
+    &quot;elapsed_seconds&quot;: 12.488976999999998
+  }
+}</pre></details></section>
+<section><h2>Persistence and coordination</h2><p>2 conversation messages survived. Handoffs have actual acknowledgements.</p><details><summary>Process identities and handoff receipts</summary><pre>{
+  &quot;restart&quot;: {
+    &quot;before&quot;: [
+      {
+        &quot;Module&quot;: &quot;collective.serve&quot;,
+        &quot;Started&quot;: &quot;2026-10-17T20:00:18.2391693Z&quot;,
+        &quot;Id&quot;: 32356
+      },
+      {
+        &quot;Module&quot;: &quot;collective.agents&quot;,
+        &quot;Started&quot;: &quot;2026-10-17T20:00:18.2796938Z&quot;,
+        &quot;Id&quot;: 29952
+      }
+    ],
+    &quot;actual_app_process_restart&quot;: true,
+    &quot;verified_at&quot;: &quot;2026-10-17T20:08:44.9938979Z&quot;,
+    &quot;after&quot;: [
+      {
+        &quot;Id&quot;: 37276,
+        &quot;Module&quot;: &quot;collective.serve&quot;,
+        &quot;Started&quot;: &quot;2026-10-17T20:08:37.6852878Z&quot;
+      },
+      {
+        &quot;Id&quot;: 49048,
+        &quot;Module&quot;: &quot;collective.agents&quot;,
+        &quot;Started&quot;: &quot;2026-10-17T20:08:37.7244976Z&quot;
+      }
+    ]
+  },
+  &quot;handoffs&quot;: [
+    {
+      &quot;id&quot;: &quot;b97d33e8-fc06-40a9-b517-341d01b398d1&quot;,
+      &quot;from_run&quot;: &quot;f9034658-b64b-4089-b58c-50823e5abb2b&quot;,
+      &quot;to_run&quot;: &quot;211534d5-6b50-487f-a04c-255c5139ced9&quot;,
+      &quot;acknowledged_at&quot;: &quot;2026-10-17 19:39:48.952742+00:00&quot;
+    }
+  ]
+}</pre></details></section>
+<section><h2>Actual workspace views</h2><figure><a href="live-causal-graph.png"><img src="live-causal-graph.png" alt="Actual completed correction and replacement plan" style="width:100%;max-height:650px;object-fit:contain"></a><figcaption>Actual completed correction and replacement plan. Open for full resolution.</figcaption></figure><figure><a href="live-reuse-comparison.png"><img src="live-reuse-comparison.png" alt="Actual matched live provider comparison" style="width:100%;max-height:650px;object-fit:contain"></a><figcaption>Actual matched live provider comparison. Open for full resolution.</figcaption></figure></section>
+<section><h2>Security boundaries</h2><ul><li>Docker containers enforce no network, non-root execution, read-only root and resource limits; shared host kernel is not a VM boundary.</li><li>Model admission is separate from code-enforced session, tenant, tool and task-lease authorization.</li><li>Source observation timestamps select a claim under an explicit policy; they do not prove source authority or truth.</li><li>Procedure hashes establish exact file versions; passing tests establish only the tested behavior.</li></ul></section>
+<section><h2>Limits of this demonstration</h2><ul><li>Single local run; not a general benchmark</li><li>Exact long repetitive tool argument fidelity probe failed; all generated artifacts require real execution checks</li><li>Conservative memory retrieval dependencies invalidated 8 historical fixture runs. This is not minimal semantic impact analysis.</li><li>Recovered multi-attempt execution with an explicitly authorized Qwen-to-Groq-20B model change, not a first-attempt or all-Qwen pass. Stopped replans and excluded debug comparison pilots are retained.</li><li>The correction was supplied explicitly; claim timestamps select a winner under policy and do not establish source authority.</li><li>The public demo depends on its host laptop and a temporary Cloudflare tunnel. The existing film predates this live validation.</li></ul></section>
+<p><a href="evidence.json">Download the sanitized evidence JSON</a></p><small>Source report SHA-256: bad18dce2f4d13f0dfe6c8ad690d5bdb8fd5d49777a5cc8009523e5c7183927a</small></main></html>

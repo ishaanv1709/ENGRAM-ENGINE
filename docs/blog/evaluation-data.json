@@ -1,0 +1,222 @@
+{
+  "observed_date": "2026-10-16",
+  "experiment": "Five paired fresh-container trials, alternating order",
+  "source_report_sha256": "dbbffd3095ee589cc4037d3a28c90863a42ba5fb754893515ca7b6c763855cab",
+  "method": "Five paired fresh-container trials: exact artifact bundle versus active artifact-bound procedure; alternating order; identical v2 hashes and 10-test suite.",
+  "timing_scope": "Preparation (including container startup), pytest execution and hash/receipt validation; excludes task creation, finish and container cleanup. Reuse includes its mandatory version-validation overhead.",
+  "limitations": "No inference: actual model calls and tokens are zero in both arms. This measures execution overhead, not autonomous code-generation savings. Signed results may show reuse slower. Five local pairs are not a general performance guarantee.",
+  "summary": {
+    "time_saved_ms": 60.108000000000175,
+    "provider_calls": 0,
+    "reuse_range_ms": [
+      5556.363,
+      6387.624
+    ],
+    "reuse_median_ms": 6090.129,
+    "tool_calls_saved": 0,
+    "baseline_range_ms": [
+      5897.04,
+      7229.161
+    ],
+    "model_calls_saved": 0,
+    "baseline_median_ms": 5957.387,
+    "model_tokens_saved": 0,
+    "paired_time_saved_ms": [
+      841.5370000000003,
+      60.108000000000175,
+      -188.6930000000002,
+      -152.97599999999966,
+      401.02399999999943
+    ]
+  },
+  "trials": [
+    {
+      "mode": "baseline",
+      "pair": 1,
+      "hashes": {
+        "capacity.py": "7b2964e30e8b63dc5f9276ba9f2bec6c1f117b3e5842b510f7ba1fe92a953e5c",
+        "test_capacity.py": "f2116a843f3adfd353c5e688288a794bb941cbb6d67f09aaf0332cb1b86d5a43"
+      },
+      "total_ms": 7229.161,
+      "execute_ms": 1603.935,
+      "prepare_ms": 4065.048,
+      "tool_calls": 3,
+      "file_writes": 2,
+      "model_calls": 0,
+      "model_tokens": 0,
+      "tests_passed": 10,
+      "validation_ms": 1560.179,
+      "tool_executions": 1
+    },
+    {
+      "mode": "reuse",
+      "pair": 1,
+      "hashes": {
+        "capacity.py": "7b2964e30e8b63dc5f9276ba9f2bec6c1f117b3e5842b510f7ba1fe92a953e5c",
+        "test_capacity.py": "f2116a843f3adfd353c5e688288a794bb941cbb6d67f09aaf0332cb1b86d5a43"
+      },
+      "total_ms": 6387.624,
+      "execute_ms": 1514.622,
+      "prepare_ms": 3281.08,
+      "tool_calls": 3,
+      "file_writes": 2,
+      "model_calls": 0,
+      "model_tokens": 0,
+      "tests_passed": 10,
+      "validation_ms": 1591.922,
+      "tool_executions": 1
+    },
+    {
+      "mode": "reuse",
+      "pair": 2,
+      "hashes": {
+        "capacity.py": "7b2964e30e8b63dc5f9276ba9f2bec6c1f117b3e5842b510f7ba1fe92a953e5c",
+        "test_capacity.py": "f2116a843f3adfd353c5e688288a794bb941cbb6d67f09aaf0332cb1b86d5a43"
+      },
+      "total_ms": 6109.556,
+      "execute_ms": 1259.726,
+      "prepare_ms": 3462.568,
+      "tool_calls": 3,
+      "file_writes": 2,
+      "model_calls": 0,
+      "model_tokens": 0,
+      "tests_passed": 10,
+      "validation_ms": 1387.262,
+      "tool_executions": 1
+    },
+    {
+      "mode": "baseline",
+      "pair": 2,
+      "hashes": {
+        "capacity.py": "7b2964e30e8b63dc5f9276ba9f2bec6c1f117b3e5842b510f7ba1fe92a953e5c",
+        "test_capacity.py": "f2116a843f3adfd353c5e688288a794bb941cbb6d67f09aaf0332cb1b86d5a43"
+      },
+      "total_ms": 6169.664,
+      "execute_ms": 1276.342,
+      "prepare_ms": 3484.169,
+      "tool_calls": 3,
+      "file_writes": 2,
+      "model_calls": 0,
+      "model_tokens": 0,
+      "tests_passed": 10,
+      "validation_ms": 1409.153,
+      "tool_executions": 1
+    },
+    {
+      "mode": "baseline",
+      "pair": 3,
+      "hashes": {
+        "capacity.py": "7b2964e30e8b63dc5f9276ba9f2bec6c1f117b3e5842b510f7ba1fe92a953e5c",
+        "test_capacity.py": "f2116a843f3adfd353c5e688288a794bb941cbb6d67f09aaf0332cb1b86d5a43"
+      },
+      "total_ms": 5901.436,
+      "execute_ms": 1334.167,
+      "prepare_ms": 3289.089,
+      "tool_calls": 3,
+      "file_writes": 2,
+      "model_calls": 0,
+      "model_tokens": 0,
+      "tests_passed": 10,
+      "validation_ms": 1278.18,
+      "tool_executions": 1
+    },
+    {
+      "mode": "reuse",
+      "pair": 3,
+      "hashes": {
+        "capacity.py": "7b2964e30e8b63dc5f9276ba9f2bec6c1f117b3e5842b510f7ba1fe92a953e5c",
+        "test_capacity.py": "f2116a843f3adfd353c5e688288a794bb941cbb6d67f09aaf0332cb1b86d5a43"
+      },
+      "total_ms": 6090.129,
+      "execute_ms": 1389.28,
+      "prepare_ms": 3176.056,
+      "tool_calls": 3,
+      "file_writes": 2,
+      "model_calls": 0,
+      "model_tokens": 0,
+      "tests_passed": 10,
+      "validation_ms": 1524.793,
+      "tool_executions": 1
+    },
+    {
+      "mode": "reuse",
+      "pair": 4,
+      "hashes": {
+        "capacity.py": "7b2964e30e8b63dc5f9276ba9f2bec6c1f117b3e5842b510f7ba1fe92a953e5c",
+        "test_capacity.py": "f2116a843f3adfd353c5e688288a794bb941cbb6d67f09aaf0332cb1b86d5a43"
+      },
+      "total_ms": 6050.016,
+      "execute_ms": 1316.176,
+      "prepare_ms": 3067.702,
+      "tool_calls": 3,
+      "file_writes": 2,
+      "model_calls": 0,
+      "model_tokens": 0,
+      "tests_passed": 10,
+      "validation_ms": 1666.138,
+      "tool_executions": 1
+    },
+    {
+      "mode": "baseline",
+      "pair": 4,
+      "hashes": {
+        "capacity.py": "7b2964e30e8b63dc5f9276ba9f2bec6c1f117b3e5842b510f7ba1fe92a953e5c",
+        "test_capacity.py": "f2116a843f3adfd353c5e688288a794bb941cbb6d67f09aaf0332cb1b86d5a43"
+      },
+      "total_ms": 5897.04,
+      "execute_ms": 1388.358,
+      "prepare_ms": 3203.061,
+      "tool_calls": 3,
+      "file_writes": 2,
+      "model_calls": 0,
+      "model_tokens": 0,
+      "tests_passed": 10,
+      "validation_ms": 1305.621,
+      "tool_executions": 1
+    },
+    {
+      "mode": "baseline",
+      "pair": 5,
+      "hashes": {
+        "capacity.py": "7b2964e30e8b63dc5f9276ba9f2bec6c1f117b3e5842b510f7ba1fe92a953e5c",
+        "test_capacity.py": "f2116a843f3adfd353c5e688288a794bb941cbb6d67f09aaf0332cb1b86d5a43"
+      },
+      "total_ms": 5957.387,
+      "execute_ms": 1244.373,
+      "prepare_ms": 3217.666,
+      "tool_calls": 3,
+      "file_writes": 2,
+      "model_calls": 0,
+      "model_tokens": 0,
+      "tests_passed": 10,
+      "validation_ms": 1495.348,
+      "tool_executions": 1
+    },
+    {
+      "mode": "reuse",
+      "pair": 5,
+      "hashes": {
+        "capacity.py": "7b2964e30e8b63dc5f9276ba9f2bec6c1f117b3e5842b510f7ba1fe92a953e5c",
+        "test_capacity.py": "f2116a843f3adfd353c5e688288a794bb941cbb6d67f09aaf0332cb1b86d5a43"
+      },
+      "total_ms": 5556.363,
+      "execute_ms": 1364.151,
+      "prepare_ms": 3010.22,
+      "tool_calls": 3,
+      "file_writes": 2,
+      "model_calls": 0,
+      "model_tokens": 0,
+      "tests_passed": 10,
+      "validation_ms": 1181.992,
+      "tool_executions": 1
+    }
+  ],
+  "container_probes": {
+    "uid": 65534,
+    "root_write_denied": true,
+    "workspace_write": true,
+    "external_connect_failed": true,
+    "docker_socket_absent": true
+  },
+  "identity_note": "Internal task and event identifiers omitted; measured values and artifact hashes preserved."
+}

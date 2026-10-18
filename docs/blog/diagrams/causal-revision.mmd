@@ -1,0 +1,5 @@
+flowchart LR
+  Prior[Prior task becomes stale] -->|DEPENDS_ON| Old[Old fact Maya]
+  New[New fact Priya] -->|SUPERSEDES| Old
+  Plan[Revised plan created but blocked] -->|REPLANS| Prior
+  Plan -->|DEPENDS_ON| New

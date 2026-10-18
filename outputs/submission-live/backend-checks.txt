@@ -1,0 +1,6 @@
+.............................s.....                                      [100%]
+34 passed, 1 skipped in 281.43s (0:04:41)
+Using the installed engram-sandbox:local image. Use -RebuildSandbox after changing its Dockerfile or dependencies.
+Waiting for local services, including the GGUF embedding model...
+ENGRAM Collective is ready at http://127.0.0.1:8088
+Provider keys go in .env.collective. Restart the API and worker after editing keys.

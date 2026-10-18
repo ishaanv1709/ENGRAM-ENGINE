@@ -1,0 +1,121 @@
+{
+  "engine": "Kokoro-82M / kokoro-onnx",
+  "voice": "af_heart",
+  "speed": 1.0,
+  "model_source": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx",
+  "model_sha256": "7d5df8ecf7d4b1878015a32686053fd0eebe2bc377234608764cc0ef3636a6c5",
+  "sample_rate": 24000,
+  "total_duration_s": 157.03333333333333,
+  "caption_timing": "Authored subtitles; short text groups proportionally aligned to measured generated narration, not ASR word timings",
+  "narration": "audio/narration.wav",
+  "scenes": [
+    {
+      "id": "01-intro",
+      "title": "A team that remembers",
+      "start_s": 0.0,
+      "speech_duration_s": 9.792,
+      "duration_s": 12.0,
+      "end_s": 12.0,
+      "audio": "audio/01-intro.wav",
+      "voice": "af_heart",
+      "sample_rate": 24000,
+      "wav_sha256": "eabb031344c95ea9194759133d370af1297f62792170fc7913284b3090d0754d"
+    },
+    {
+      "id": "02-team",
+      "title": "One objective. Five roles.",
+      "start_s": 12.0,
+      "speech_duration_s": 14.784,
+      "duration_s": 16.3,
+      "end_s": 28.3,
+      "audio": "audio/02-team.wav",
+      "voice": "af_heart",
+      "sample_rate": 24000,
+      "wav_sha256": "1624704490351217554b843aea11697c7be391c822ae7a0c0f5b02628d2f7349"
+    },
+    {
+      "id": "03-memory",
+      "title": "Three kinds of memory.",
+      "start_s": 28.3,
+      "speech_duration_s": 17.045333,
+      "duration_s": 18.566667,
+      "end_s": 46.866667,
+      "audio": "audio/03-memory.wav",
+      "voice": "af_heart",
+      "sample_rate": 24000,
+      "wav_sha256": "b415fb5a562181516b7fe6f854e6f26bf9c7be4058e33d5443ada734936d77af"
+    },
+    {
+      "id": "04-causal",
+      "title": "A correction changes the plan.",
+      "start_s": 46.866667,
+      "speech_duration_s": 14.336,
+      "duration_s": 16.0,
+      "end_s": 62.866667,
+      "audio": "audio/04-causal.wav",
+      "voice": "af_heart",
+      "sample_rate": 24000,
+      "wav_sha256": "78324b6f2e4d04613638ccf451fc3bfa91a314ff005a3446513917d42d61fbc6"
+    },
+    {
+      "id": "05-conflicts",
+      "title": "Disagreement stays visible.",
+      "start_s": 62.866667,
+      "speech_duration_s": 16.917333,
+      "duration_s": 18.433333,
+      "end_s": 81.3,
+      "audio": "audio/05-conflicts.wav",
+      "voice": "af_heart",
+      "sample_rate": 24000,
+      "wav_sha256": "cd044282ded73fbd1ca82a375818a5e09761a3518d86d51d3a183ad00a727488"
+    },
+    {
+      "id": "06-procedures",
+      "title": "Experience, with a version.",
+      "start_s": 81.3,
+      "speech_duration_s": 17.066667,
+      "duration_s": 18.566667,
+      "end_s": 99.866667,
+      "audio": "audio/06-procedures.wav",
+      "voice": "af_heart",
+      "sample_rate": 24000,
+      "wav_sha256": "9405a6ac3c7bf32d03f7eb88ecbbfb6ea13631c09e000a8ed7cca70647fa0dfc"
+    },
+    {
+      "id": "07-security",
+      "title": "Shared knowledge. Private execution.",
+      "start_s": 99.866667,
+      "speech_duration_s": 17.472,
+      "duration_s": 19.0,
+      "end_s": 118.866667,
+      "audio": "audio/07-security.wav",
+      "voice": "af_heart",
+      "sample_rate": 24000,
+      "wav_sha256": "ef8ce769a3a853963bf8b35775d9a155f41260b01595cdef3607e4dc6169ba95"
+    },
+    {
+      "id": "08-restart",
+      "title": "The next session starts ahead.",
+      "start_s": 118.866667,
+      "speech_duration_s": 19.328,
+      "duration_s": 20.833333,
+      "end_s": 139.7,
+      "audio": "audio/08-restart.wav",
+      "voice": "af_heart",
+      "sample_rate": 24000,
+      "wav_sha256": "fd50df9376318a880d4f614da1ee5be0dc6b59109a9f2bae21ac4984cf4adfc1"
+    },
+    {
+      "id": "09-close",
+      "title": "Context becomes collective intelligence.",
+      "start_s": 139.7,
+      "speech_duration_s": 15.530667,
+      "duration_s": 17.333333,
+      "end_s": 157.033333,
+      "audio": "audio/09-close.wav",
+      "voice": "af_heart",
+      "sample_rate": 24000,
+      "wav_sha256": "e830f0963522178b833896e11d9ad588236228c4ff806a4c18b90e1c3d6b328b"
+    }
+  ]
+}

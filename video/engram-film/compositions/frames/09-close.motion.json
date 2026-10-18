@@ -1,0 +1,19 @@
+{
+  "scene": "09-close",
+  "duration_s": 20,
+  "rules": [
+    "svg-path-draw",
+    "clip-path-reveal"
+  ],
+  "entry": {
+    "vector": "up 28 px over 0.8s, power3.out",
+    "from_rest": true
+  },
+  "exit": {
+    "vector": "still, 0 px/s",
+    "still_moving": false
+  },
+  "entry_vector": "up 28px",
+  "exit_vector": "still",
+  "notes": "Brand close with actual captured brain logo and real UI mosaic. All reveals land by 12.2 seconds. Two-second final clean hold at 18\u201320; no success claims or invented numbers."
+}

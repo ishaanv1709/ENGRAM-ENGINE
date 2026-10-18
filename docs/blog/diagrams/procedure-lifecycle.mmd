@@ -1,0 +1,8 @@
+flowchart LR
+  Publish[Publish exact artifacts] --> Propose[Propose version and manifest]
+  Propose --> Verify[Different run executes fresh checks]
+  Verify --> Hash[Verify actual current file hashes]
+  Hash --> Active[Activate version]
+  Active --> Reuse[Prepare exact version in fresh run]
+  Reuse --> Check[Execute fresh checks and retain receipt]
+  Check --> Measure[Measure calls tokens and time]

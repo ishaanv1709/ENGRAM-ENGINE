@@ -1,0 +1,46 @@
+.connection-form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 14px;
+  background: #121d15;
+  border: 1px solid #253029;
+  padding: 20px;
+  border-radius: 7px;
+  margin-bottom: 18px;
+}
+.connection-form label {
+  font-size: 11px;
+  color: #8da184;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.connection-form input {
+  background: #0b140d;
+  border: 1px solid #34452e;
+  border-radius: 5px;
+  padding: 10px;
+  color: #d1dfc7;
+  min-width: 0;
+}
+.connection-form .button {
+  align-self: end;
+  justify-self: end;
+}
+.console {
+  font-size: 11px;
+  line-height: 1.7;
+  background: #080e0a;
+  padding: 16px;
+  border-radius: 5px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: #bdd2ad;
+  max-height: 400px;
+  overflow: auto;
+}
+@media (max-width: 700px) {
+  .connection-form {
+    grid-template-columns: 1fr;
+  }
+}

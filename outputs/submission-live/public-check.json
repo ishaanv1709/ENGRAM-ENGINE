@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "url": "https://tones-puzzle-sao-literacy.trycloudflare.com/evidence/live/",
+  "public_files": [
+    {
+      "file": "index.html",
+      "status": 200,
+      "sha256": "03b4a9153b7bbd38634e5acb45b5b0cb114bb5c7f7421571f7ce89a35678e6e3"
+    },
+    {
+      "file": "evidence.json",
+      "status": 200,
+      "sha256": "ad380bf2c386450281728f8bc88b7b03add51db5d8e6ae435fc3c2d9b7420c1c"
+    },
+    {
+      "file": "brand.svg",
+      "status": 200,
+      "sha256": "e08dbf992ed846ec85d3cce0b844f3403bac6de2241c57ec2dc9ff8789a7b61d"
+    },
+    {
+      "file": "live-causal-graph.png",
+      "status": 200,
+      "sha256": "dab887ccc5a0b841f57e873e9af57fe2420bca3d0e388fe8c8d60de9420c6d57"
+    },
+    {
+      "file": "live-reuse-comparison.png",
+      "status": 200,
+      "sha256": "b4f570050b0d08c9ab5c6ffe1e458d4b489d9ccb675fb62b114c0f92fa9d7534"
+    }
+  ],
+  "unauthenticated_projects_status": 401
+}

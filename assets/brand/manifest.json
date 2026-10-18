@@ -1,0 +1,10 @@
+{
+  "identity": "ENGRAM connected memory loops",
+  "format": "editable SVG",
+  "color": "#C5E6AD",
+  "uses": {
+    "assets/brand/engram-mark.svg": "e08dbf992ed846ec85d3cce0b844f3403bac6de2241c57ec2dc9ff8789a7b61d",
+    "frontend/public/assets/engram-mark.svg": "e08dbf992ed846ec85d3cce0b844f3403bac6de2241c57ec2dc9ff8789a7b61d",
+    "video/engram-film/assets/engram-mark.svg": "e08dbf992ed846ec85d3cce0b844f3403bac6de2241c57ec2dc9ff8789a7b61d"
+  }
+}

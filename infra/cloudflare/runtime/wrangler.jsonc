@@ -1,0 +1,19 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "engram-engine-runtime",
+  "account_id": "0759656c9efc281f7558f048f2b69b85",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-18",
+  "workers_dev": true,
+  "preview_urls": false,
+  "containers": [{
+    "class_name": "EngramRuntime",
+    "image": "../../../data/collective/cloudflare-runtime-build/Dockerfile",
+    "instance_type": "standard-4",
+    "max_instances": 1
+  }],
+  "durable_objects": { "bindings": [{ "name": "RUNTIME", "class_name": "EngramRuntime" }] },
+  "exports": { "EngramRuntime": { "type": "durable-object", "storage": "sqlite" } },
+  "triggers": { "crons": ["* * * * *"] },
+  "observability": { "enabled": false }
+}

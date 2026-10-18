@@ -1,0 +1,927 @@
+{
+  "title": "ENGRAM Collective: The Release That Remembers",
+  "completed_at": "2026-10-17T21:46:23.920548+00:00",
+  "model": "openai/gpt-oss-20b",
+  "initial_model": "qwen/qwen3.8-27b",
+  "model_changes": [
+    {
+      "at": "2026-10-17T19:55:25.412948+00:00",
+      "model": "openai/gpt-oss-20b",
+      "reason": "User explicitly authorized 20B after Qwen daily quota exhaustion"
+    }
+  ],
+  "passed": true,
+  "source_report_sha256": "bad18dce2f4d13f0dfe6c8ad690d5bdb8fd5d49777a5cc8009523e5c7183927a",
+  "ingestion": {
+    "status": "committed",
+    "fact_count": 2
+  },
+  "team_before_correction": {
+    "status": "completed",
+    "result": {
+      "summary": "**ORCHID Release \u2013 Calculator Artifact**\n\n| Item | Description | Evidence ID |\n|------|-------------|-------------|\n| **Official FalkorDB documentation source** | URL: <https://docs.falkordb.com/> (GitHub: <https://github.com/FalkorDB/docs/blob/main/index.md>) | `6159b3e6-0273-4588-a3d9-7c6ebb3bc376` |\n| **calculator.py** | Implements `deployment_capacity(replicas, per_replica)` with required error handling; file <\u202f450\u202fcharacters | `f9034658-b64b-4089-b58c-50823e5abb2b` |\n| **test_calculator.py** | Concise parametrized pytest covering normal, zero, negative, float, and bool inputs; file <\u202f450\u202fcharacters | `f9034658-b64b-4089-b58c-50823e5abb2b` |\n| **Verification report** | Independent verifier executed the artifacts, ran `python -m pytest -q`, and obtained 10 passed tests | `211534d5-6b50-487f-a04c-255c5139ced9` |\n| **Consolidated outcome** | Curated semantic memory and reusable procedure | `90ddba5d-7b9a-4458-81e3-367ad86ec45b` |\n\n**Reusable Procedure**\n\n*Name:* `deployment_capacity`  \n*Purpose:* Compute the total deployment capacity by multiplying two non\u2011negative integers.  \n*Preconditions:* `replicas` and `per_replica` must be integers \u2265\u202f0.  \n*Steps:*  \n1. Validate types \u2013 raise `TypeError` if either argument is not an `int` or is a `bool`.  \n2. Validate values \u2013 raise `ValueError` if either argument is negative.  \n3. Return `replicas * per_replica`.  \n*Tool:* `python` (no external dependencies).  \n*Check Event:* `2481` (10 pytest cases passed).  \n\nAll artifacts are published and verified; no further action is required.",
+      "limitations": [],
+      "source_urls": [],
+      "artifact_ids": [],
+      "evidence_ids": [
+        "02862494-b066-446c-b705-5808d4a22b64",
+        "06b6e0e9-bb5b-47d9-8488-6005cac243e5",
+        "0e17b6b5-b2ac-442e-ac88-87c58bf25351",
+        "257d206e-26e4-437c-a5dd-b6326ffeaa3e",
+        "291ffa9f-44c0-46fa-b481-19ba751d4c1c",
+        "3c324fb0-32ec-4c39-bb27-3e62e5d13b25",
+        "3ecf5d3a-9564-4f84-9f8e-d19af67995a1",
+        "4548b058-52b6-4212-88ef-f09f347b38f3",
+        "5782edf5-2bcd-4b4f-9f37-4e27e122daec",
+        "68afd07b-bac6-41d6-9ea2-2d50e83a0a0f",
+        "88109ac0-10ce-4e9c-b798-4e9e3acd6f44",
+        "afec8949-f5e6-4f60-978c-04eb331303cb",
+        "b17f9ba7-cf86-468a-a492-b1d5c1fe928c",
+        "cef9f12f-86a2-452c-b968-25b9466342d3"
+      ],
+      "needs_handoff": false,
+      "check_event_ids": [],
+      "outcome_memory_id": "68d59ffb-4537-41db-bdc1-73aed4e6484d"
+    }
+  },
+  "workflow_completion_events": [
+    {
+      "id": 2327,
+      "run_id": "06911f0e-4537-46e0-9707-86bbe2bd406a",
+      "created_at": "2026-10-17 19:11:42.121226+00:00"
+    },
+    {
+      "id": 2345,
+      "run_id": "6159b3e6-0273-4588-a3d9-7c6ebb3bc376",
+      "created_at": "2026-10-17 19:15:40.390067+00:00"
+    },
+    {
+      "id": 2383,
+      "run_id": "f9034658-b64b-4089-b58c-50823e5abb2b",
+      "created_at": "2026-10-17 19:22:51.674451+00:00"
+    },
+    {
+      "id": 2493,
+      "run_id": "211534d5-6b50-487f-a04c-255c5139ced9",
+      "created_at": "2026-10-17 19:45:08.499657+00:00"
+    },
+    {
+      "id": 2514,
+      "run_id": "db8ffa46-ccc6-4039-948b-6d1e556cf0a4",
+      "created_at": "2026-10-17 19:48:33.239823+00:00"
+    },
+    {
+      "id": 2599,
+      "run_id": "90ddba5d-7b9a-4458-81e3-367ad86ec45b",
+      "created_at": "2026-10-17 20:02:03.750944+00:00"
+    },
+    {
+      "id": 2614,
+      "run_id": "a722aa35-17b9-4338-97ed-2b527deaf093",
+      "created_at": "2026-10-17 20:05:07.000473+00:00"
+    },
+    {
+      "id": 2621,
+      "run_id": "206a877f-cf82-4221-bfe3-01743c6229a1",
+      "created_at": "2026-10-17 20:07:11.700078+00:00"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "1d563d26-2667-4a4e-b4a8-c17e95037fbe",
+      "name": "calculator.py",
+      "sha256": "497cdc42a5bc17a3603a6e2632b552a293921d81e34afa243891d01c5510642f"
+    },
+    {
+      "id": "aa671b64-5ffb-485a-b3cc-f64217e982d4",
+      "name": "test_calculator.py",
+      "sha256": "599a60ae269bcc95a4ac9510886fda53f5bdc0f546f3a84d9ca4345ff011ffa9"
+    }
+  ],
+  "recovery_attempts": [
+    {
+      "at": "2026-10-17T19:47:55.951001+00:00",
+      "prior_states": [
+        {
+          "id": "db8ffa46-ccc6-4039-948b-6d1e556cf0a4",
+          "role": "curator",
+          "status": "failed",
+          "error": "BadRequestError: execution failed; inspect local worker logs"
+        }
+      ],
+      "reason": "Resume after verifier standalone-command recovery and provider-compatible final reporting fixes; actual previous failures retained"
+    },
+    {
+      "at": "2026-10-17T19:53:00.769826+00:00",
+      "prior_states": [
+        {
+          "id": "206a877f-cf82-4221-bfe3-01743c6229a1",
+          "role": "coordinator",
+          "status": "blocked",
+          "error": "Groq daily quota reached for qwen/qwen3.8-27b; raise the account limit or wait for quota to replenish."
+        },
+        {
+          "id": "a722aa35-17b9-4338-97ed-2b527deaf093",
+          "role": "verifier",
+          "status": "blocked",
+          "error": "Model request exceeds its 8000-token minute budget; compact its context"
+        },
+        {
+          "id": "90ddba5d-7b9a-4458-81e3-367ad86ec45b",
+          "role": "curator",
+          "status": "blocked",
+          "error": "Groq daily quota reached for qwen/qwen3.8-27b; raise the account limit or wait for quota to replenish."
+        }
+      ],
+      "reason": "Resume after verifier standalone-command recovery and provider-compatible final reporting fixes; actual previous failures retained"
+    },
+    {
+      "at": "2026-10-17T19:55:54.184464+00:00",
+      "prior_states": [
+        {
+          "id": "206a877f-cf82-4221-bfe3-01743c6229a1",
+          "role": "coordinator",
+          "status": "blocked",
+          "error": "Groq daily quota reached for qwen/qwen3.8-27b; raise the account limit or wait for quota to replenish."
+        },
+        {
+          "id": "a722aa35-17b9-4338-97ed-2b527deaf093",
+          "role": "verifier",
+          "status": "blocked",
+          "error": "Groq daily quota reached for qwen/qwen3.8-27b; raise the account limit or wait for quota to replenish."
+        },
+        {
+          "id": "90ddba5d-7b9a-4458-81e3-367ad86ec45b",
+          "role": "curator",
+          "status": "blocked",
+          "error": "Groq daily quota reached for qwen/qwen3.8-27b; raise the account limit or wait for quota to replenish."
+        }
+      ],
+      "reason": "Resume after verifier standalone-command recovery and provider-compatible final reporting fixes; actual previous failures retained"
+    },
+    {
+      "at": "2026-10-17T20:06:51.090613+00:00",
+      "prior_states": [
+        {
+          "id": "206a877f-cf82-4221-bfe3-01743c6229a1",
+          "role": "coordinator",
+          "status": "blocked",
+          "error": "Groq daily quota reached for qwen/qwen3.8-27b; raise the account limit or wait for quota to replenish."
+        }
+      ],
+      "reason": "Resume after verifier standalone-command recovery and provider-compatible final reporting fixes; actual previous failures retained"
+    }
+  ],
+  "replan_recovery_history": [
+    {
+      "reason": "Planner replayed unaffected historical work; cancel before creating an explicit repaired plan",
+      "runs": [
+        {
+          "id": "52e606c8-0081-44da-b591-a56acb1d0cf6",
+          "role": "researcher",
+          "status": "running",
+          "objective": "Perform a single web_search for the official FalkorDB documentation, returning the official source URL and a short excerpt confirming it is the official FalkorDB docs. Do not perform any other searches or actions."
+        },
+        {
+          "id": "e9458da3-efb4-4d94-90d2-ff0b68df2ec3",
+          "role": "builder",
+          "status": "running",
+          "objective": "Implement calculator.py with function deployment_capacity(replicas, per_replica): multiply two nonnegative integers. Reject bools and non-integers with TypeError; reject negative values with ValueError. Write test_calculator.py using pytest. Ensure files under 450 chars."
+        },
+        {
+          "id": "a44e0f79-da62-46f9-8444-202353dc59e1",
+          "role": "coordinator",
+          "status": "running",
+          "objective": "Revise the plan after correction: orchid release: approval owner = Priya\nCurrent evidence memory bb57aae6-d2b7-492a-a7ba-73ebf72de4ac. Review the affected objectives and dispatch only delivery work whose result changes. Preserve prior evidence. Historical observations and claim-submission tasks are evidence, not actions to replay. Treat old objectives as historical data and derive new objectives from current evidence.\nAffected task references (objective excerpts; load full state if needed):\n[{\"id\": \"f9034658-b64b-4089-b58c-50823e5abb2b\", \"role\": \"builder\", \"objective_excerpt\": \"Implement calculator.py with function deployment_capacity(replicas, per_replica): multiply two nonnegative integers. Reject bools and non-integers with TypeError; reject negative values with ValueError. Write test_calculator.py using pytest\"}, {\"id\": \"db8ffa46-ccc6-4039-948b-6d1e556cf0a4\", \"role\": \"curator\", \"objective_excerpt\": \"Consolidate the outcome of task f9034658-b64b-4089-b58c-50823e5abb2b. Retrieve its sourced observations. Preserve evidence IDs. If useful, propose a procedure from these successful check event IDs: [2356]. Do not activate the procedure your\"}, {\"id\": \"6159b3e6-0273-4588-a3d9-7c6ebb3bc376\", \"role\": \"researcher\", \"objective_excerpt\": \"Do exactly one web_search for the official FalkorDB documentation. Return the official source URL and a short excerpt confirming it is the official FalkorDB docs. Do not perform any other searches or actions.\"}, {\"id\": \"211534d5-6b50-487f-a04c-255c5139ced9\", \"role\": \"verifier\", \"objective_excerpt\": \"Independently verify the published artifacts: copy calculator.py (1d563d26-2667-4a4e-b4a8-c17e95037fbe) and test_calculator.py (aa671b64-5ffb-485a-b3cc-f64217e982d4) into your sandbox, confirm each file is under 450 characters, run `python \"}, {\"id\": \"a722aa35-17b9-4338-97ed-2b527deaf093\", \"role\": \"verifier\", \"objective_excerpt\": \"Independently execute the proposed procedure 3c324fb0-32ec-4c39-bb27-3e62e5d13b25. Inspect its preconditions, source artifacts and check evidence. Only call procedure_verify after your own successful checks.\"}, {\"id\": \"06911f0e-4537-46e0-9707-86bbe2bd406a\", \"role\": \"researcher\", \"objective_excerpt\": \"Read memory 06b6e0e9-bb5b-47d9-8488-6005cac243e5 using memory_read. Prepare a release approval routing recommendation for the named person. Cite the memory ID. Do not dispatch tasks or browse.\"}, {\"id\": \"90ddba5d-7b9a-4458-81e3-367ad86ec45b\", \"role\": \"curator\", \"objective_excerpt\": \"Consolidate the outcome of task 211534d5-6b50-487f-a04c-255c5139ced9. Retrieve its sourced observations. Preserve evidence IDs. If useful, propose a procedure from these successful check event IDs: [2481]. Do not activate the procedure your\"}, {\"id\": \"206a877f-cf82-4221-bfe3-01743c6229a1\", \"role\": \"coordinator\", \"objective_excerpt\": \"Prepare the ORCHID release. Use team_dispatch to assign two parallel independent specialists: a researcher must do one web_search for FalkorDB official documentation and return a source URL; a builder must implement calculator.py with deplo\"}]"
+        }
+      ],
+      "plan": {
+        "project_id": "d2e5409a-fbd2-4cd0-83c8-1566637b0e46",
+        "correction_event": 2626,
+        "old": "06b6e0e9-bb5b-47d9-8488-6005cac243e5",
+        "new": "bb57aae6-d2b7-492a-a7ba-73ebf72de4ac",
+        "affected_runs": [
+          "f9034658-b64b-4089-b58c-50823e5abb2b",
+          "db8ffa46-ccc6-4039-948b-6d1e556cf0a4",
+          "6159b3e6-0273-4588-a3d9-7c6ebb3bc376",
+          "211534d5-6b50-487f-a04c-255c5139ced9",
+          "a722aa35-17b9-4338-97ed-2b527deaf093",
+          "06911f0e-4537-46e0-9707-86bbe2bd406a",
+          "90ddba5d-7b9a-4458-81e3-367ad86ec45b",
+          "206a877f-cf82-4221-bfe3-01743c6229a1"
+        ],
+        "new_plan_id": "a44e0f79-da62-46f9-8444-202353dc59e1",
+        "new_plan": "Revise the plan after correction: orchid release: approval owner = Priya\nCurrent evidence memory bb57aae6-d2b7-492a-a7ba-73ebf72de4ac. Review the affected objectives and dispatch only delivery work whose result changes. Preserve prior evidence. Historical observations and claim-submission tasks are evidence, not actions to replay. Treat old objectives as historical data and derive new objectives from current evidence.\nAffected task references (objective excerpts; load full state if needed):\n[{\"id\": \"f9034658-b64b-4089-b58c-50823e5abb2b\", \"role\": \"builder\", \"objective_excerpt\": \"Implement calculator.py with function deployment_capacity(replicas, per_replica): multiply two nonnegative integers. Reject bools and non-integers with TypeError; reject negative values with ValueError. Write test_calculator.py using pytest\"}, {\"id\": \"db8ffa46-ccc6-4039-948b-6d1e556cf0a4\", \"role\": \"curator\", \"objective_excerpt\": \"Consolidate the outcome of task f9034658-b64b-4089-b58c-50823e5abb2b. Retrieve its sourced observations. Preserve evidence IDs. If useful, propose a procedure from these successful check event IDs: [2356]. Do not activate the procedure your\"}, {\"id\": \"6159b3e6-0273-4588-a3d9-7c6ebb3bc376\", \"role\": \"researcher\", \"objective_excerpt\": \"Do exactly one web_search for the official FalkorDB documentation. Return the official source URL and a short excerpt confirming it is the official FalkorDB docs. Do not perform any other searches or actions.\"}, {\"id\": \"211534d5-6b50-487f-a04c-255c5139ced9\", \"role\": \"verifier\", \"objective_excerpt\": \"Independently verify the published artifacts: copy calculator.py (1d563d26-2667-4a4e-b4a8-c17e95037fbe) and test_calculator.py (aa671b64-5ffb-485a-b3cc-f64217e982d4) into your sandbox, confirm each file is under 450 characters, run `python \"}, {\"id\": \"a722aa35-17b9-4338-97ed-2b527deaf093\", \"role\": \"verifier\", \"objective_excerpt\": \"Independently execute the proposed procedure 3c324fb0-32ec-4c39-bb27-3e62e5d13b25. Inspect its preconditions, source artifacts and check evidence. Only call procedure_verify after your own successful checks.\"}, {\"id\": \"06911f0e-4537-46e0-9707-86bbe2bd406a\", \"role\": \"researcher\", \"objective_excerpt\": \"Read memory 06b6e0e9-bb5b-47d9-8488-6005cac243e5 using memory_read. Prepare a release approval routing recommendation for the named person. Cite the memory ID. Do not dispatch tasks or browse.\"}, {\"id\": \"90ddba5d-7b9a-4458-81e3-367ad86ec45b\", \"role\": \"curator\", \"objective_excerpt\": \"Consolidate the outcome of task 211534d5-6b50-487f-a04c-255c5139ced9. Retrieve its sourced observations. Preserve evidence IDs. If useful, propose a procedure from these successful check event IDs: [2481]. Do not activate the procedure your\"}, {\"id\": \"206a877f-cf82-4221-bfe3-01743c6229a1\", \"role\": \"coordinator\", \"objective_excerpt\": \"Prepare the ORCHID release. Use team_dispatch to assign two parallel independent specialists: a researcher must do one web_search for FalkorDB official documentation and return a source URL; a builder must implement calculator.py with deplo\"}]"
+      }
+    }
+  ],
+  "excluded_comparison_pilots": [
+    {
+      "reason": "Pilot read artifacts without destination paths and ran pytest in an empty workspace. Excluded from matched savings; no artificial baseline penalty.",
+      "baseline_run": "118634bd-5688-4ade-b618-b27b3c3f27ab",
+      "reuse_run": null,
+      "event_ids": [
+        2663,
+        2664,
+        2665,
+        2666,
+        2667,
+        2668,
+        2669,
+        2670,
+        2671,
+        2672,
+        2673,
+        2674,
+        2675,
+        2676
+      ]
+    },
+    {
+      "reason": "Manual-copy verifier did not enter prepared-resource completion guidance and repeated copies/tests. Debug run excluded before the matched comparison; no artificial baseline penalty.",
+      "baseline_run": "98dec2a3-91cb-496c-855c-eb448d241c83",
+      "reuse_run": null,
+      "event_ids": [
+        2681,
+        2682,
+        2683,
+        2684,
+        2685,
+        2686,
+        2687,
+        2688,
+        2689,
+        2690,
+        2691,
+        2692,
+        2693,
+        2694,
+        2695,
+        2696,
+        2697,
+        2698,
+        2699,
+        2700,
+        2701,
+        2702,
+        2703,
+        2704,
+        2705,
+        2706,
+        2707,
+        2708,
+        2709,
+        2710,
+        2711,
+        2712,
+        2713,
+        2714,
+        2715
+      ]
+    },
+    {
+      "reason": "Manual verifier requested tests before all referenced artifacts had been copied. Debug run excluded; artifact-completeness readiness fixed before both matched arms.",
+      "baseline_run": "26f92455-5e56-49a2-80ca-5b1d281948ce",
+      "reuse_run": null,
+      "event_ids": [
+        2717,
+        2718,
+        2719,
+        2720,
+        2721,
+        2722,
+        2723,
+        2724,
+        2725,
+        2726,
+        2727,
+        2728,
+        2729,
+        2730,
+        2731,
+        2732
+      ]
+    },
+    {
+      "reason": "Harness requested team-only access to a user-private procedure; correctly denied before inference. Rerun both arms in identical owner auto scope without changing memory visibility.",
+      "baseline_run": "fd6d82a7-d318-41d1-9d19-3226679f0584",
+      "reuse_run": "c7398ec8-f505-4fbe-a458-4969476a4bf5",
+      "event_ids": [
+        2734,
+        2735,
+        2736,
+        2737,
+        2738,
+        2739,
+        2740,
+        2741,
+        2742,
+        2743,
+        2744,
+        2745,
+        2746,
+        2747,
+        2748,
+        2749,
+        2750,
+        2751,
+        2752,
+        2754,
+        2755,
+        2756
+      ]
+    },
+    {
+      "reason": "Repeated procedure reads after message compaction; add durable successful-read receipts and advance to real tests. Debug pair excluded before the final matched run.",
+      "baseline_run": "573e2458-08fc-4606-ae40-a66b018b7518",
+      "reuse_run": "7011fef1-e580-40ac-a8ac-23949e73e732",
+      "event_ids": [
+        2757,
+        2758,
+        2759,
+        2760,
+        2761,
+        2762,
+        2763,
+        2764,
+        2765,
+        2766,
+        2767,
+        2768,
+        2769,
+        2770,
+        2771,
+        2772,
+        2773,
+        2774,
+        2775,
+        2777,
+        2778,
+        2779,
+        2780,
+        2781,
+        2782,
+        2783,
+        2784,
+        2785,
+        2786,
+        2787,
+        2788,
+        2789,
+        2790,
+        2791,
+        2792,
+        2793,
+        2794,
+        2795,
+        2796,
+        2797
+      ]
+    },
+    {
+      "reason": "Verifier generic required-tool guard overwrote the specific sandbox_execute phase choice, causing repeated procedure reads. Both arms will be rerun after the ordering fix.",
+      "baseline_run": "ba42b85d-6045-4fe9-addb-5ef5458a8dba",
+      "reuse_run": "1974f38e-eb35-441b-8028-027f35acc7a7",
+      "event_ids": [
+        2946,
+        2947,
+        2948,
+        2949,
+        2950,
+        2951,
+        2952,
+        2953,
+        2954,
+        2955,
+        2956,
+        2957,
+        2958,
+        2959,
+        2960,
+        2961,
+        2962,
+        2963,
+        2964,
+        2966,
+        2967,
+        2968,
+        2969,
+        2970,
+        2971,
+        2972,
+        2973,
+        2974,
+        2975,
+        2976,
+        2977,
+        2978,
+        2979,
+        2980,
+        2981,
+        2982
+      ]
+    },
+    {
+      "reason": "Baseline passed all ten actual tests but Groq rejected final report generation three times. Receipt-only final reporting will replace replayed tool history; both arms will be rerun.",
+      "baseline_run": "7eec65dd-824f-475a-ae8d-391c979be598",
+      "reuse_run": null,
+      "event_ids": [
+        2984,
+        2985,
+        2986,
+        2987,
+        2988,
+        2989,
+        2990,
+        2991,
+        2992,
+        2993,
+        2994,
+        2995,
+        2996,
+        2997,
+        2998,
+        2999,
+        3000,
+        3001,
+        3002,
+        3003,
+        3004,
+        3005
+      ]
+    },
+    {
+      "reason": "Baseline completed; reuse read the procedure but Groq rejected its next forced-tool request three times. Narrowing the execution phase to its permitted tool and current audited ledger before rerunning both arms.",
+      "baseline_run": "f5a8d4f3-87a8-4f62-884d-75808df8e3f9",
+      "reuse_run": "105ac273-06d0-4ece-baf9-a656686a4958",
+      "event_ids": [
+        3006,
+        3007,
+        3008,
+        3009,
+        3010,
+        3011,
+        3012,
+        3013,
+        3014,
+        3015,
+        3016,
+        3017,
+        3018,
+        3019,
+        3020,
+        3021,
+        3022,
+        3023,
+        3024,
+        3026,
+        3027,
+        3028,
+        3029,
+        3030,
+        3031,
+        3032,
+        3033,
+        3034,
+        3035,
+        3036,
+        3037,
+        3038,
+        3039,
+        3040,
+        3041,
+        3042,
+        3043,
+        3044
+      ]
+    }
+  ],
+  "graph": {
+    "direct_reader_path": [
+      [
+        "06911f0e-4537-46e0-9707-86bbe2bd406a",
+        "06b6e0e9-bb5b-47d9-8488-6005cac243e5"
+      ]
+    ],
+    "claims": [
+      {
+        "id": "4bfbca12-5c0c-44a1-92cf-d6c43b897278",
+        "value": "Maya",
+        "source_id": "3ecf5d3a-9564-4f84-9f8e-d19af67995a1",
+        "source_time": "2026-10-17 09:00:00+00:00"
+      },
+      {
+        "id": "96859d89-44e3-461d-8bbd-090c6e3f8c9c",
+        "value": "Priya",
+        "source_id": "bc92f6ea-3b99-49db-93a4-6beb469edb6c",
+        "source_time": "2026-10-17 20:07:53.525836+00:00"
+      }
+    ],
+    "correction": {
+      "id": 2626,
+      "payload": {
+        "new": "bb57aae6-d2b7-492a-a7ba-73ebf72de4ac",
+        "old": "06b6e0e9-bb5b-47d9-8488-6005cac243e5",
+        "after": "orchid release: approval owner = Priya",
+        "before": "orchid release: approval owner = Maya",
+        "project_id": "d2e5409a-fbd2-4cd0-83c8-1566637b0e46",
+        "affected_runs": [
+          "f9034658-b64b-4089-b58c-50823e5abb2b",
+          "90ddba5d-7b9a-4458-81e3-367ad86ec45b",
+          "211534d5-6b50-487f-a04c-255c5139ced9",
+          "db8ffa46-ccc6-4039-948b-6d1e556cf0a4",
+          "a722aa35-17b9-4338-97ed-2b527deaf093",
+          "6159b3e6-0273-4588-a3d9-7c6ebb3bc376",
+          "206a877f-cf82-4221-bfe3-01743c6229a1",
+          "06911f0e-4537-46e0-9707-86bbe2bd406a"
+        ]
+      }
+    },
+    "original_action": {
+      "status": "completed",
+      "result": {
+        "summary": "## Release Approval Routing Recommendation\n\n**Recommendation:** Route the ORCHID release approval request to **Maya**.\n\n**Basis:**\n- Memory `06b6e0e9-bb5b-47d9-8488-6005cac243e5` (semantic, category: critical, status: active, confidence: 1.0) states: *\"orchid release: approval owner = Maya\"*.\n- This is a resolved claim under the `active-sources/latest-observation-v1` policy, sourced from `551232aa-5a30-4a03-8956-9613674e0b44`.\n- Corroborated by related memories: `68afd07b-bac6-41d6-9ea2-2d50e83a0a0f` (\"Maya owns approval for the ORCHID release\") and `3ecf5d3a-9564-4f84-9f8e-d19af67995a1` (\"ORCHID release roster: Maya owns release approval\").\n\n**Routing action:** Direct the ORCHID release approval to Maya as the designated approval owner. No competing claims or unresolved conflicts were found in the retrieved memories.\n\n**Citations:**\n- Memory ID: `06b6e0e9-bb5b-47d9-8488-6005cac243e5`\n- Source ID: `551232aa-5a30-4a03-8956-9613674e0b44`\n- Corroborating memory IDs: `68afd07b-bac6-41d6-9ea2-2d50e83a0a0f`, `3ecf5d3a-9564-4f84-9f8e-d19af67995a1`, `88109ac0-10ce-4e9c-b798-4e9e3acd6f44`\n\nNo tasks dispatched, no browsing performed, per instructions.",
+        "limitations": [],
+        "source_urls": [],
+        "artifact_ids": [],
+        "evidence_ids": [
+          "06b6e0e9-bb5b-47d9-8488-6005cac243e5",
+          "3ecf5d3a-9564-4f84-9f8e-d19af67995a1",
+          "4548b058-52b6-4212-88ef-f09f347b38f3",
+          "68afd07b-bac6-41d6-9ea2-2d50e83a0a0f",
+          "88109ac0-10ce-4e9c-b798-4e9e3acd6f44"
+        ],
+        "needs_handoff": false,
+        "check_event_ids": [],
+        "outcome_memory_id": "b17f9ba7-cf86-468a-a492-b1d5c1fe928c"
+      }
+    },
+    "stale_action": {
+      "status": "stale",
+      "revision": 2
+    },
+    "replan_path": [
+      [
+        "ff4a5ee2-b8e8-43be-9a05-83234cea8537",
+        "06911f0e-4537-46e0-9707-86bbe2bd406a"
+      ]
+    ],
+    "revised_action": {
+      "status": "completed",
+      "result": {
+        "summary": "**Concrete decision change**\n\nThe ORCHID release approval routing has been updated to reflect the new approval owner:\n\n- **Previous owner (incorrect):** Maya  \n- **Corrected owner (current evidence):** Priya  \n\nThis change is captured in the semantic memory `bb57aae6-d2b7-492a-a7ba-73ebf72de4ac`, which records the claim \u201corchid release: approval owner = Priya\u201d with confidence\u202f1.0 and status\u202factive.\n\n**Corrected recommendation**\n\nThe recommendation for routing the ORCHID release approval request is now:\n\n> **Route the ORCHID release approval request to\u202fPriya.**\n\nThis recommendation is based on the updated claim in memory `bb57aae6-d2b7-492a-a7ba-73ebf72de4ac`. No additional work (documentation searches, code rebuilds, or artifact re\u2011verification) is required because the change only affects approval routing, not the implementation of the calculator artifact or its tests.\n\n**Evidence IDs**\n\n- Claim memory: `bb57aae6-d2b7-492a-a7ba-73ebf72de4ac`  \n- Previous recommendation (before correction): `06911f0e-4537-46e0-9707-86bbe2bd406a` (now superseded)  \n\nAll artifacts (`calculator.py`, `test_calculator.py`) and their verification reports remain valid and unchanged.",
+        "limitations": [],
+        "source_urls": [],
+        "artifact_ids": [],
+        "evidence_ids": [
+          "291ffa9f-44c0-46fa-b481-19ba751d4c1c",
+          "3c324fb0-32ec-4c39-bb27-3e62e5d13b25",
+          "536762dc-2d2f-4f2d-9837-622918637b37",
+          "77f06c7b-08ba-452a-8b15-51b913eb91ca",
+          "bb57aae6-d2b7-492a-a7ba-73ebf72de4ac"
+        ],
+        "needs_handoff": false,
+        "check_event_ids": [],
+        "outcome_memory_id": "246db43e-1e90-47ad-8714-82ca4ab6fd20"
+      }
+    }
+  },
+  "restart": {
+    "before": [
+      {
+        "Module": "collective.serve",
+        "Started": "2026-10-17T20:00:18.2391693Z",
+        "Id": 32356
+      },
+      {
+        "Module": "collective.agents",
+        "Started": "2026-10-17T20:00:18.2796938Z",
+        "Id": 29952
+      }
+    ],
+    "actual_app_process_restart": true,
+    "verified_at": "2026-10-17T20:08:44.9938979Z",
+    "after": [
+      {
+        "Id": 37276,
+        "Module": "collective.serve",
+        "Started": "2026-10-17T20:08:37.6852878Z"
+      },
+      {
+        "Id": 49048,
+        "Module": "collective.agents",
+        "Started": "2026-10-17T20:08:37.7244976Z"
+      }
+    ]
+  },
+  "persistence": {
+    "session_survived": true,
+    "checkpoint_rows": 40,
+    "artifact_hashes_verified": 2,
+    "messages": 2,
+    "corrected_fact_active": true
+  },
+  "persisted_messages": 2,
+  "handoffs": [
+    {
+      "id": "b97d33e8-fc06-40a9-b517-341d01b398d1",
+      "from_run": "f9034658-b64b-4089-b58c-50823e5abb2b",
+      "to_run": "211534d5-6b50-487f-a04c-255c5139ced9",
+      "acknowledged_at": "2026-10-17 19:39:48.952742+00:00"
+    }
+  ],
+  "comparison": {
+    "procedure_id": "3c324fb0-32ec-4c39-bb27-3e62e5d13b25",
+    "version": 1,
+    "manifest": [
+      {
+        "id": "1d563d26-2667-4a4e-b4a8-c17e95037fbe",
+        "name": "calculator.py",
+        "run_id": "f9034658-b64b-4089-b58c-50823e5abb2b",
+        "sha256": "497cdc42a5bc17a3603a6e2632b552a293921d81e34afa243891d01c5510642f"
+      },
+      {
+        "id": "aa671b64-5ffb-485a-b3cc-f64217e982d4",
+        "name": "test_calculator.py",
+        "run_id": "f9034658-b64b-4089-b58c-50823e5abb2b",
+        "sha256": "599a60ae269bcc95a4ac9510886fda53f5bdc0f546f3a84d9ca4345ff011ffa9"
+      }
+    ],
+    "baseline_run": "a8beddc0-feb0-482a-9979-e4b01ec16985",
+    "method": "One sequential live-model comparison: known exact artifact bundle versus active verified procedure. Identical artifacts and pytest command; same provider/model. Counts include policy/Mem0 calls attributed to each direct verifier run. Automatic post-run curation is disabled for both arms to isolate verification and avoid background inference contention. Wall timing includes queue, startup, model waits and checks; queue/startup is also shown separately. No code-generation savings claim.",
+    "limitations": [
+      "One pair is observational, not a reliable speed benchmark",
+      "Fixed baseline-first order and warm shared services can affect timing; no randomized multi-pair estimate",
+      "Provider failures and internal SDK retries may have unknown billed tokens",
+      "Calls made before receipt instrumentation are excluded and disclosed"
+    ],
+    "reuse_run": "34fddc6e-83ba-4937-96b3-afda0db7148a",
+    "trials": {
+      "baseline": {
+        "run_id": "a8beddc0-feb0-482a-9979-e4b01ec16985",
+        "status": "completed",
+        "model": "openai/gpt-oss-20b",
+        "provider_calls_observed": 4,
+        "successful_calls_with_usage": 4,
+        "provider_failed_calls": 0,
+        "model_tokens_observed": 1823,
+        "elapsed_seconds": 66.406943,
+        "active_agent_seconds": 45.822651,
+        "queue_and_prepare_seconds": 20.584292,
+        "check_event_ids": [
+          3059
+        ],
+        "checks": [
+          {
+            "event_id": 3059,
+            "command": "python -m pytest -q",
+            "exit_code": 0,
+            "stdout": "..........                                                               [100%]\n10 passed in 0.02s\n",
+            "stderr": ""
+          }
+        ],
+        "agent_loop": {
+          "tool_executions": 1,
+          "file_writes": 2,
+          "model_calls": 4,
+          "model_tokens": 1823
+        },
+        "provider_receipt_event_ids": [
+          3047,
+          3052,
+          3057,
+          3061
+        ],
+        "provider_receipts": [
+          {
+            "event_id": 3047,
+            "model": "openai/gpt-oss-20b",
+            "usage": {
+              "queue_time": 0.396357767,
+              "total_time": 0.084102488,
+              "prompt_time": 0.012807079,
+              "total_tokens": 329,
+              "prompt_tokens": 261,
+              "completion_time": 0.071295409,
+              "completion_tokens": 68,
+              "prompt_tokens_details": null,
+              "completion_tokens_details": {
+                "audio_tokens": null,
+                "reasoning_tokens": 15,
+                "accepted_prediction_tokens": null,
+                "rejected_prediction_tokens": null
+              }
+            },
+            "status": "success",
+            "adapter": "groq",
+            "elapsed_ms": 798.6672999104485,
+            "sdk_internal_retries_included_in_count": false
+          },
+          {
+            "event_id": 3052,
+            "model": "openai/gpt-oss-20b",
+            "usage": {
+              "queue_time": 0.395572199,
+              "total_time": 0.083105011,
+              "prompt_time": 0.012937937,
+              "total_tokens": 290,
+              "prompt_tokens": 224,
+              "completion_time": 0.070167074,
+              "completion_tokens": 66,
+              "prompt_tokens_details": null,
+              "completion_tokens_details": {
+                "audio_tokens": null,
+                "reasoning_tokens": 14,
+                "accepted_prediction_tokens": null,
+                "rejected_prediction_tokens": null
+              }
+            },
+            "status": "success",
+            "adapter": "groq",
+            "elapsed_ms": 604.8382000299171,
+            "sdk_internal_retries_included_in_count": false
+          },
+          {
+            "event_id": 3057,
+            "model": "openai/gpt-oss-20b",
+            "usage": {
+              "queue_time": 0.395950832,
+              "total_time": 0.067372517,
+              "prompt_time": 0.023186485,
+              "total_tokens": 458,
+              "prompt_tokens": 420,
+              "completion_time": 0.044186032,
+              "completion_tokens": 38,
+              "prompt_tokens_details": null,
+              "completion_tokens_details": {
+                "audio_tokens": null,
+                "reasoning_tokens": 4,
+                "accepted_prediction_tokens": null,
+                "rejected_prediction_tokens": null
+              }
+            },
+            "status": "success",
+            "adapter": "groq",
+            "elapsed_ms": 601.1151999700814,
+            "sdk_internal_retries_included_in_count": false
+          },
+          {
+            "event_id": 3061,
+            "model": "openai/gpt-oss-20b",
+            "usage": {
+              "queue_time": 0.395509359,
+              "total_time": 0.354274362,
+              "prompt_time": 0.021969927,
+              "total_tokens": 746,
+              "prompt_tokens": 426,
+              "completion_time": 0.332304435,
+              "completion_tokens": 320,
+              "prompt_tokens_details": null,
+              "completion_tokens_details": {
+                "audio_tokens": null,
+                "reasoning_tokens": 10,
+                "accepted_prediction_tokens": null,
+                "rejected_prediction_tokens": null
+              }
+            },
+            "status": "success",
+            "adapter": "groq",
+            "elapsed_ms": 2412.078999914229,
+            "sdk_internal_retries_included_in_count": false
+          }
+        ]
+      },
+      "reuse": {
+        "run_id": "34fddc6e-83ba-4937-96b3-afda0db7148a",
+        "status": "completed",
+        "model": "openai/gpt-oss-20b",
+        "provider_calls_observed": 3,
+        "successful_calls_with_usage": 3,
+        "provider_failed_calls": 0,
+        "model_tokens_observed": 5034,
+        "elapsed_seconds": 53.917966,
+        "active_agent_seconds": 33.486398,
+        "queue_and_prepare_seconds": 20.431568,
+        "check_event_ids": [
+          3080
+        ],
+        "checks": [
+          {
+            "event_id": 3080,
+            "command": "python -m pytest -q",
+            "exit_code": 0,
+            "stdout": "..........                                                               [100%]\n10 passed in 0.02s\n",
+            "stderr": ""
+          }
+        ],
+        "agent_loop": {
+          "tool_executions": 1,
+          "file_writes": 2,
+          "model_calls": 3,
+          "model_tokens": 5034
+        },
+        "provider_receipt_event_ids": [
+          3074,
+          3078,
+          3082
+        ],
+        "provider_receipts": [
+          {
+            "event_id": 3074,
+            "model": "openai/gpt-oss-20b",
+            "usage": {
+              "queue_time": 0.337030554,
+              "total_time": 0.288725579,
+              "prompt_time": 0.202254122,
+              "total_tokens": 3602,
+              "prompt_tokens": 3518,
+              "completion_time": 0.086471457,
+              "completion_tokens": 84,
+              "prompt_tokens_details": {
+                "audio_tokens": null,
+                "cached_tokens": 256
+              },
+              "completion_tokens_details": {
+                "audio_tokens": null,
+                "reasoning_tokens": 36,
+                "accepted_prediction_tokens": null,
+                "rejected_prediction_tokens": null
+              }
+            },
+            "status": "success",
+            "adapter": "groq",
+            "elapsed_ms": 2169.556900043972,
+            "sdk_internal_retries_included_in_count": false
+          },
+          {
+            "event_id": 3078,
+            "model": "openai/gpt-oss-20b",
+            "usage": {
+              "queue_time": 0.314432837,
+              "total_time": 0.074384313,
+              "prompt_time": 0.033461059,
+              "total_tokens": 662,
+              "prompt_tokens": 622,
+              "completion_time": 0.040923254,
+              "completion_tokens": 40,
+              "prompt_tokens_details": null,
+              "completion_tokens_details": {
+                "audio_tokens": null,
+                "reasoning_tokens": 6,
+                "accepted_prediction_tokens": null,
+                "rejected_prediction_tokens": null
+              }
+            },
+            "status": "success",
+            "adapter": "groq",
+            "elapsed_ms": 517.024299944751,
+            "sdk_internal_retries_included_in_count": false
+          },
+          {
+            "event_id": 3082,
+            "model": "openai/gpt-oss-20b",
+            "usage": {
+              "queue_time": 0.313983265,
+              "total_time": 0.370423022,
+              "prompt_time": 0.024726212,
+              "total_tokens": 770,
+              "prompt_tokens": 452,
+              "completion_time": 0.34569681,
+              "completion_tokens": 318,
+              "prompt_tokens_details": null,
+              "completion_tokens_details": {
+                "audio_tokens": null,
+                "reasoning_tokens": 10,
+                "accepted_prediction_tokens": null,
+                "rejected_prediction_tokens": null
+              }
+            },
+            "status": "success",
+            "adapter": "groq",
+            "elapsed_ms": 2788.533000042662,
+            "sdk_internal_retries_included_in_count": false
+          }
+        ]
+      }
+    },
+    "signed_savings": {
+      "provider_calls_observed": 1,
+      "model_tokens_observed": -3211,
+      "elapsed_seconds": 12.488976999999998
+    }
+  },
+  "limitations": [
+    "Single local run; not a general benchmark",
+    "Exact long repetitive tool argument fidelity probe failed; all generated artifacts require real execution checks",
+    "Conservative memory retrieval dependencies invalidated 8 historical fixture runs. This is not minimal semantic impact analysis.",
+    "Recovered multi-attempt execution with an explicitly authorized Qwen-to-Groq-20B model change, not a first-attempt or all-Qwen pass. Stopped replans and excluded debug comparison pilots are retained.",
+    "The correction was supplied explicitly; claim timestamps select a winner under policy and do not establish source authority.",
+    "The public demo depends on its host laptop and a temporary Cloudflare tunnel. The existing film predates this live validation."
+  ],
+  "security_boundaries": [
+    "Docker containers enforce no network, non-root execution, read-only root and resource limits; shared host kernel is not a VM boundary.",
+    "Model admission is separate from code-enforced session, tenant, tool and task-lease authorization.",
+    "Source observation timestamps select a claim under an explicit policy; they do not prove source authority or truth.",
+    "Procedure hashes establish exact file versions; passing tests establish only the tested behavior."
+  ]
+}

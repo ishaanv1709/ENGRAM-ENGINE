@@ -1,0 +1,19 @@
+{
+  "scene": "07-security",
+  "duration_s": 20,
+  "rules": [
+    "svg-path-draw",
+    "clip-path-reveal"
+  ],
+  "entry": {
+    "vector": "up 28 px over 0.8s, power3.out",
+    "from_rest": true
+  },
+  "exit": {
+    "vector": "grid right 1.25 px/s, down 0.6 px/s",
+    "still_moving": true
+  },
+  "entry_vector": "up 28px",
+  "exit_vector": "right 1.25px/s",
+  "notes": "Architectural diagram plus real sandbox capture. No absolute security claims; no test counts. Screenshot must be supplied at assets/sandbox.png."
+}

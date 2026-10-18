@@ -1,0 +1,62 @@
+{
+  "images": [
+    {
+      "src": "assets/engram-mark.svg",
+      "ok": true
+    },
+    {
+      "src": "assets/cover.png",
+      "ok": true
+    },
+    {
+      "src": "assets/architecture.png",
+      "ok": true
+    },
+    {
+      "src": "assets/memory-flow.png",
+      "ok": true
+    },
+    {
+      "src": "assets/causal-graph.png",
+      "ok": true
+    },
+    {
+      "src": "assets/causal-ui.png",
+      "ok": true
+    },
+    {
+      "src": "assets/procedure-flow.png",
+      "ok": true
+    },
+    {
+      "src": "assets/reuse-evaluation.png",
+      "ok": true
+    },
+    {
+      "src": "assets/benchmark-ui.png",
+      "ok": true
+    },
+    {
+      "src": "assets/security-ui.png",
+      "ok": true
+    }
+  ],
+  "failures": [],
+  "headings": [
+    "A release workflow makes memory concrete",
+    "The team shares evidence and keeps its execution separate",
+    "Three memory types and three retrieval tiers solve different problems",
+    "FalkorDB determines which work becomes stale",
+    "Competing claims keep their sources",
+    "A procedure binds instructions to the files that passed",
+    "Measuring reuse without manufacturing a saving",
+    "Persistence checks and current verification",
+    "Security depends on enforced boundaries",
+    "What comes next",
+    "Explore the implementation"
+  ],
+  "desktop": "1440x1000",
+  "mobile": "390x844",
+  "mobile_overflow": false,
+  "app_captures": "Authenticated actual local app; no mocked routes or AI task execution"
+}

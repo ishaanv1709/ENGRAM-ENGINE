@@ -1,0 +1,11 @@
+%% Individual renderable Mermaid sources are in diagrams/.
+flowchart TD
+  UI[Authenticated workspace] --> Team[DeepAgents specialists]
+  Team <--> PG[(PostgreSQL history and durable tasks)]
+  Team <--> MM[Memory manager]
+  MM <--> F[(FalkorDB connected memory)]
+  MM --> Admission[Safeguard admission]
+  MM --> Mem0[Mem0 extraction]
+  Mem0 <--> Q[(Qdrant derived index)]
+  Team --> Box[Restricted per-run Docker sandbox]
+  Box --> Artifacts[Published artifacts and SHA-256]

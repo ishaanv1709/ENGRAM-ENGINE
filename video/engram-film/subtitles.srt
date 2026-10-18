@@ -1,0 +1,179 @@
+1
+00:00:00,000 --> 00:00:03,099
+When an agent forgets, the whole team starts over.
+
+2
+00:00:03,099 --> 00:00:07,003
+Engram Collective gives agents a shared memory, a visible chain
+
+3
+00:00:07,003 --> 00:00:09,792
+of evidence, and a way to carry work forward.
+
+4
+00:00:12,000 --> 00:00:13,958
+A coordinator plans the work.
+
+5
+00:00:13,958 --> 00:00:16,996
+Researchers and builders can run in parallel.
+
+6
+00:00:16,996 --> 00:00:19,966
+Verifiers test the actual artifacts, while a
+
+7
+00:00:19,966 --> 00:00:23,409
+curator turns completed work into useful knowledge.
+
+8
+00:00:23,409 --> 00:00:26,784
+Handoffs carry evidence, files and remaining work.
+
+9
+00:00:28,300 --> 00:00:30,447
+Episodes preserve what happened.
+
+10
+00:00:30,447 --> 00:00:33,937
+Semantic memory keeps sourced facts and corrections.
+
+11
+00:00:33,937 --> 00:00:37,561
+Procedural memory stores tools and verified workflows.
+
+12
+00:00:37,561 --> 00:00:41,386
+Engram combines pinned context, a recent memory cache and
+
+13
+00:00:41,386 --> 00:00:45,345
+graph retrieval, while Mem zero extracts and refines facts.
+
+14
+00:00:46,867 --> 00:00:49,786
+A corrected fact is more than a new sentence.
+
+15
+00:00:49,786 --> 00:00:52,705
+Engram follows the tasks that depended on the
+
+16
+00:00:52,705 --> 00:00:55,689
+old fact, marks their results stale, and links
+
+17
+00:00:55,689 --> 00:00:57,959
+a revised plan to the new evidence.
+
+18
+00:00:57,959 --> 00:01:01,203
+The causal timeline makes that change inspectable.
+
+19
+00:01:02,867 --> 00:01:05,664
+When agents disagree, both claims survive.
+
+20
+00:01:05,664 --> 00:01:08,528
+Each keeps its source and observation time.
+
+21
+00:01:08,528 --> 00:01:11,059
+The resolver selects the latest active
+
+22
+00:01:11,059 --> 00:01:13,323
+evidence under an explicit policy.
+
+23
+00:01:13,323 --> 00:01:16,587
+Contradictory claims at the same timestamp remain
+
+24
+00:01:16,587 --> 00:01:19,784
+unresolved, instead of becoming false certainty.
+
+25
+00:01:21,300 --> 00:01:23,915
+A reusable procedure is bound to exact
+
+26
+00:01:23,915 --> 00:01:27,975
+artifact versions, preconditions and passing source checks.
+
+27
+00:01:27,975 --> 00:01:32,517
+A different verifier must execute its own tests before activation.
+
+28
+00:01:32,517 --> 00:01:35,063
+Reuse runs check those same files and
+
+29
+00:01:35,063 --> 00:01:38,367
+record actual model usage and execution savings.
+
+30
+00:01:39,867 --> 00:01:42,311
+Every tenant has a separate graph.
+
+31
+00:01:42,311 --> 00:01:44,325
+Memory can belong to a team,
+
+32
+00:01:44,325 --> 00:01:45,691
+a user or an agent.
+
+33
+00:01:45,691 --> 00:01:48,998
+Code runs in isolated Docker sandboxes with no
+
+34
+00:01:48,998 --> 00:01:52,306
+network, a read only root and resource limits.
+
+35
+00:01:52,306 --> 00:01:57,339
+Safeguard judges memory admission; it does not grant tool permissions.
+
+36
+00:01:58,867 --> 00:02:02,918
+Postgres preserves conversations, task state and checkpoints.
+
+37
+00:02:02,918 --> 00:02:06,438
+FalkorDB keeps relationships and causal dependencies.
+
+38
+00:02:06,438 --> 00:02:10,556
+Qdrant supports Mem zero, with local embeddings for retrieval.
+
+39
+00:02:10,556 --> 00:02:14,342
+Across separate live and infrastructure fixtures, restart
+
+40
+00:02:14,342 --> 00:02:18,195
+checks preserved sessions, artifact files and checkpoints.
+
+41
+00:02:19,700 --> 00:02:23,038
+This is Engram Collective: an agent team designed
+
+42
+00:02:23,038 --> 00:02:25,899
+to remember, coordinate and show its work.
+
+43
+00:02:25,899 --> 00:02:30,939
+This walkthrough combines real app captures and infrastructure validation.
+
+44
+00:02:30,939 --> 00:02:33,255
+The complete Qwen team run remains
+
+45
+00:02:33,255 --> 00:02:35,231
+blocked by daily token quota.

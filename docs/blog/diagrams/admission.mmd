@@ -1,0 +1,10 @@
+flowchart TD
+  Input[Observation] --> Pending[Persist pending episode]
+  Pending --> Judge[Typed admission decision]
+  Judge -->|Suspicious| Quarantine[Quarantine]
+  Judge -->|Noise| Archive[Archive]
+  Judge -->|Admit| Extract[Mem0 fact extraction]
+  Extract --> Semantic[Semantic facts with sources]
+  Outcome[Checked artifact outcome] --> Propose[Procedural proposal]
+  Propose --> Independent[Independent current-file checks]
+  Independent --> Procedure[Versioned procedure]

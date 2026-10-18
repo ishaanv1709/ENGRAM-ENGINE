@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+venv/
+
+# Models (too large for GitHub — see README for download links)
+data/models/
+*.gguf
+
+# llama.cpp build (clone separately)
+llama.cpp/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment (contains local paths)
+.env
+.env.collective
+.env.cloudflare
+.env.cloudflare.runtime
+.wrangler/
+.venv-collective*/
+frontend/node_modules/
+node_modules/
+.venv/
+.pytest_cache/
+.ruff_cache/
+frontend/dist/
+data/collective/
+playwright-report/
+test-results/
+infra/wheels/
+data/collective-*.log
+.venv-collective-linux/
+frontend/tsconfig.tsbuildinfo
+vendor/
+.venv-kev/
+.venv-video/
+video/engram-film/renders/
+video/engram-film/.motion-review/
+video/engram-film/.hyperframes/
+video/engram-film/node_modules/
+video/engram-film/audio/
+video/engram-film/narration.wav
+video/engram-film/voice-test.wav
+.claude/
+data/sessions/
+data/memory_graph*
+data/pinned_memory.json
+data/test_decay/
+logs/
+*.log
+evaluation_log.txt
+results/memory_graph*.html
+video/**/.thumbnails/
+video/**/.waveform-cache/
+video/**/capture/
+outputs/*.zip
+docs/blog/*.zip

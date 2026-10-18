@@ -1,0 +1,139 @@
+{
+  "captures": [
+    [
+      "workspace",
+      "Workspace"
+    ],
+    [
+      "team",
+      "Agent team"
+    ],
+    [
+      "memory",
+      "Memory"
+    ],
+    [
+      "causes",
+      "Causal timeline"
+    ],
+    [
+      "conflicts",
+      "Claim resolution"
+    ],
+    [
+      "procedures",
+      "Procedures"
+    ],
+    [
+      "artifacts",
+      "Artifacts"
+    ],
+    [
+      "graph",
+      "Knowledge graph"
+    ],
+    [
+      "sandbox",
+      "Sandbox console"
+    ],
+    [
+      "system",
+      "System & access"
+    ]
+  ],
+  "provenance": [
+    {
+      "file": "workspace",
+      "scope": "Production services and tools invoked by an integration driver; no LLM calls or mocked services",
+      "fixture": {
+        "tenant": "43ca52df-6da4-41ed-b740-cc337faff9eb",
+        "project": "3c4b88f1-3b31-4dd8-9ea9-81c4318de4ff",
+        "email": "film-infrastructure-e4ad705e-14c2-433a-ae3b-9fb6097f8fec@example.test"
+      }
+    },
+    {
+      "file": "team",
+      "scope": "Earlier partial Qwen run: actual builder, independent verifier and Mem0; complete team workflow did not pass",
+      "fixture": {
+        "tenant": "cf8421b5-3a0b-4f3f-91d1-9c02e07fe134",
+        "project": "c3ccdd4d-478c-4b39-84c7-859bc7484473",
+        "email": "live-b2a8f9c7-a45c-4abe-a538-7917061cd567@example.test"
+      }
+    },
+    {
+      "file": "memory",
+      "scope": "Earlier partial Qwen run: actual builder, independent verifier and Mem0; complete team workflow did not pass",
+      "fixture": {
+        "tenant": "cf8421b5-3a0b-4f3f-91d1-9c02e07fe134",
+        "project": "c3ccdd4d-478c-4b39-84c7-859bc7484473",
+        "email": "live-b2a8f9c7-a45c-4abe-a538-7917061cd567@example.test"
+      }
+    },
+    {
+      "file": "causes",
+      "scope": "Production services and tools invoked by an integration driver; no LLM calls or mocked services",
+      "fixture": {
+        "tenant": "43ca52df-6da4-41ed-b740-cc337faff9eb",
+        "project": "3c4b88f1-3b31-4dd8-9ea9-81c4318de4ff",
+        "email": "film-infrastructure-e4ad705e-14c2-433a-ae3b-9fb6097f8fec@example.test"
+      }
+    },
+    {
+      "file": "conflicts",
+      "scope": "Production services and tools invoked by an integration driver; no LLM calls or mocked services",
+      "fixture": {
+        "tenant": "43ca52df-6da4-41ed-b740-cc337faff9eb",
+        "project": "3c4b88f1-3b31-4dd8-9ea9-81c4318de4ff",
+        "email": "film-infrastructure-e4ad705e-14c2-433a-ae3b-9fb6097f8fec@example.test"
+      }
+    },
+    {
+      "file": "procedures",
+      "scope": "Production services and tools invoked by an integration driver; no LLM calls or mocked services",
+      "fixture": {
+        "tenant": "43ca52df-6da4-41ed-b740-cc337faff9eb",
+        "project": "3c4b88f1-3b31-4dd8-9ea9-81c4318de4ff",
+        "email": "film-infrastructure-e4ad705e-14c2-433a-ae3b-9fb6097f8fec@example.test"
+      }
+    },
+    {
+      "file": "artifacts",
+      "scope": "Production services and tools invoked by an integration driver; no LLM calls or mocked services",
+      "fixture": {
+        "tenant": "43ca52df-6da4-41ed-b740-cc337faff9eb",
+        "project": "3c4b88f1-3b31-4dd8-9ea9-81c4318de4ff",
+        "email": "film-infrastructure-e4ad705e-14c2-433a-ae3b-9fb6097f8fec@example.test"
+      }
+    },
+    {
+      "file": "graph",
+      "scope": "Production services and tools invoked by an integration driver; no LLM calls or mocked services",
+      "fixture": {
+        "tenant": "43ca52df-6da4-41ed-b740-cc337faff9eb",
+        "project": "3c4b88f1-3b31-4dd8-9ea9-81c4318de4ff",
+        "email": "film-infrastructure-e4ad705e-14c2-433a-ae3b-9fb6097f8fec@example.test"
+      }
+    },
+    {
+      "file": "sandbox",
+      "scope": "Production services and tools invoked by an integration driver; no LLM calls or mocked services",
+      "fixture": {
+        "tenant": "43ca52df-6da4-41ed-b740-cc337faff9eb",
+        "project": "3c4b88f1-3b31-4dd8-9ea9-81c4318de4ff",
+        "email": "film-infrastructure-e4ad705e-14c2-433a-ae3b-9fb6097f8fec@example.test"
+      }
+    },
+    {
+      "file": "system",
+      "scope": "Production services and tools invoked by an integration driver; no LLM calls or mocked services",
+      "fixture": {
+        "tenant": "43ca52df-6da4-41ed-b740-cc337faff9eb",
+        "project": "3c4b88f1-3b31-4dd8-9ea9-81c4318de4ff",
+        "email": "film-infrastructure-e4ad705e-14c2-433a-ae3b-9fb6097f8fec@example.test"
+      }
+    }
+  ],
+  "errors": [],
+  "capturedAt": "2026-10-16T01:42:15.389Z",
+  "source": "Authenticated real local ENGRAM UI; no mocked routes"
+}

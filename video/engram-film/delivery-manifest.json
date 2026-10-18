@@ -1,0 +1,18 @@
+{
+  "file": "D:\\Neurohacks\\video\\engram-film\\renders\\ENGRAM-Collective-demo.mp4",
+  "sha256": "07d3a8cd8db4b752eefa5b57752fd8d89a79032a21fe6139d9ddc4bb24ff0d30",
+  "bytes": 31378912,
+  "duration_s": 157.033333,
+  "width": 1920,
+  "height": 1080,
+  "frame_rate": "30/1",
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "audio_channels": 2,
+  "editable_source": "index.html",
+  "scope": "Architecture and real infrastructure validation walkthrough; complete autonomous Qwen team workflow remains quota-blocked",
+  "capture_manifest": "assets/capture-manifest.json",
+  "logo": "../../assets/brand/engram-mark.svg",
+  "review_coverage": "Encoded-media technical and sampled-frame review; no full audio audition claimed",
+  "qa_report": "renders/ENGRAM-Collective-QA.json"
+}

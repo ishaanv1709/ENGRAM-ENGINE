@@ -1,0 +1,86 @@
+{
+  "passed": true,
+  "verified_at": "2026-10-18T16:52:27.032056+00:00",
+  "backend": {
+    "passed": 40,
+    "skipped": 1,
+    "seconds": 169.89,
+    "provider_inference_tests_enabled": false,
+    "log_sha256": "20fb6d30d4f97ba4c4ae9d4da4892a178d8131886c80d30866a68f1448439f37"
+  },
+  "browser": {
+    "local_passed": 8,
+    "local_seconds": 27.5,
+    "public_passed": 1,
+    "public_seconds": 8.4
+  },
+  "build": "passed",
+  "ruff": "passed",
+  "extra_fresh_mission": "passed_groq120b_across_restart_with_prior_attempt_history",
+  "public_url": "https://furnished-reach-stylish-stocks.trycloudflare.com/evidence/live/",
+  "measured_runtime_digest": "d87aba1fc7b1c3f06bd2d3ffd31f3a2a654096c214c187d75939854aa51d3db8",
+  "final_runtime_sha256": {
+    "agents.py": "1b0a76e197c0efc22b7d5fc0beed0c1fb9d924547c6d7cd32ca0b4bbf11af1a1",
+    "app.py": "0ac75a6d6a11c3ad7aae876a381b30891e412b5e1390cb977906cbffdff7e411",
+    "auth.py": "159c5f747724b7396728bd4e7695ad953410935dd3f1c403a63165c294dfece9",
+    "byok.py": "2185f632d90fa9367b5bbcb4416f63f0c07771ceed5ad9a807dae055bcf7886c",
+    "context_passports.py": "ad936b70b1be2ac8a8fe4cff1ae219c4da3b00aec63047b5f2b3259e45ed30f0",
+    "coordination.py": "7f219aed9937581d525b3d55652ced2f8aec1eeac232235a26b13104ffa9bcc4",
+    "db.py": "5464a8abd7968456fd23ab70d9a68534982cf9a2e6f1311d019f1e634b053def",
+    "decisions.py": "b48e2eb06adb480b53a8d4f6bbf5b39536ce94ed9cdc281b015affed4550a692",
+    "embedding_server.py": "23c3b7ee930c36a44189d6dc2febd7b78e805498e6f1745a2557d392385f212f",
+    "evaluate.py": "375dea6f59ec90bf54d43426775c61e68b5adf031979b4a7a697652d6044052a",
+    "event_visibility.py": "79cca9ef769147a6a3bff5afc1a33e659a1b153ffa953dfeb5b266723b389443",
+    "evidence.py": "dc4305e6aa2cd0d09039612556a35ef523c2c0331bf3c71c6b2c240f4d56b30f",
+    "graph.py": "17b5b7d2f1afcfbe2fd0c3da33b28ad95062d8c1d199f554fbbf5158a825607c",
+    "integrations.py": "9492ade19f848c73b57110bce5dbebd77aceafd8c90d0e03d7af70627098ce84",
+    "maintenance.py": "7939935879e2774b19060dd6d2906db14d9a7b9489ca1971beb634c96d58b2fb",
+    "mcp_registry.py": "9da926f19dd62626985e82232f583135167a7d5647d477834fdd08adc40ead51",
+    "mem0_provider.py": "c2dfeba7843328ebe1ec67052b44b9d762e7256d0f33c1946f4d874369fa3b2e",
+    "memory.py": "f5313fe8881f2914d9fd260d42ec175e748a48b5c19406e005b643960830262d",
+    "models.py": "f33a724809bfbaa5b56ff9ef8aba602a4ce59d936c4e906b200a8f749036eb4b",
+    "model_budget.py": "7e0dc968f8b749a19467a269ed1910ae866fb7d9e95367ed1ec37b2a95f6274c",
+    "procedures.py": "c7c888cb89510c3bc018d8b27ca5497bfe112854cba91ede462f88f013dcdae0",
+    "profile_api.py": "faf049db0ac046616e0ae0d71bd6a20133a8e6f4fd003867d2163953d762f5d9",
+    "repositories.py": "e45bda4eaec7e1f49d4da3bcde59ff1a02584ec821afa6c18224d2091ad3528f",
+    "runtime.py": "b78fab85840b848c94467b9bff551553004cd250a4d2af0a9f4bfd43f97a9528",
+    "sandbox.py": "822786b660d54e02bb518ff83acc31f77b4a52ed484263879c9dbe5fcfd07296",
+    "search.py": "237e742819a96a31d5015bed8e1e5414eb86a019f65b8ab87790a8e04e82b19b",
+    "serve.py": "6f2ac662a4c2a96a1a1466528ea39b2cb789f75379d6d083e4c0a6178fc52b88",
+    "settings.py": "b7e920a000617ccbd336479660734551260245f53676df81c30873fe0b3c06c7",
+    "showcase.py": "71d80dd8a7264fe1e5ea80d50287e9758360c5cecdf1a43236d72a769df7bb6e",
+    "tools.py": "8ef8bc25fa340b7839d320c452d257fb87243cbea63141c5e7c514b92e740e15",
+    "workflows.py": "098a549e80d9b17f4fd98768e52d4ff211c92f690c3d0d722992e33325affb87",
+    "workflow_actions.py": "dbe09581a196429f6438f351f83accf32b39a2f1fd314b9f0665f57bd9ba4b41",
+    "workflow_api.py": "f2efcbba6313bc26972d5813789184d7ee15264f736c6d27ee075ad0826b4653",
+    "__init__.py": "404c168d5633adca8071d75dca7eabb4e5d6b56cbdfbe1d1c70202eb66131525"
+  },
+  "recheck_history": [
+    {
+      "passed": false,
+      "backend_passed": 39,
+      "backend_failed": 1,
+      "skipped": 1,
+      "reason": "Windows C-drive temporary directory ran out of space; full trace retained in ignored runtime evidence"
+    },
+    {
+      "passed": true,
+      "workflow_tests": 3,
+      "seconds": 34.33,
+      "scope": "Scratch files moved to the project drive; real sandbox workflow checks repeated"
+    }
+  ],
+  "extra_fresh_mission_source_sha256": "0126fcff89b964ff71435948f8d51bf55d241cc628260d6120b100c031d57584",
+  "browser_recheck_history": [
+    {
+      "local_passed": 6,
+      "local_failed": 2,
+      "reason": "Exact correction-card text was present; flattened adjacent timestamp text broke a word-boundary selector. Replaced with exact descendant text."
+    },
+    {
+      "public_failed": 1,
+      "reason": "Old temporary Cloudflare hostname stopped resolving; renewed managed tunnel and tested the new HTTPS origin."
+    }
+  ],
+  "public_artifact_layout_checks": "passed_desktop_and_mobile"
+}

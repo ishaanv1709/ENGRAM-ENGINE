@@ -1,0 +1,327 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="How ENGRAM connects agent memory, graph dependencies and verified procedures, with real local evaluations."><title>Building Persistent Agent Teams with ENGRAM ENGINE</title><style>
+@font-face{font-family:DM;src:url('assets/DM-Sans.ttf')}@font-face{font-family:Manrope;src:url('assets/Manrope.ttf')}
+:root{--ink:#15261a;--muted:#586555;--paper:#f7f6ef;--line:#d7ddcf}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:18px/1.85 DM,Arial,sans-serif}a{color:#286540;text-underline-offset:4px}.masthead{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:auto;padding:26px 34px;border-bottom:1px solid var(--line);font-size:13px;letter-spacing:2px}.brand{display:flex;align-items:center;gap:14px;font-weight:750}.brand img{width:35px;background:#14231b;border-radius:10px;padding:4px}header{max-width:1080px;margin:70px auto 30px;padding:0 34px}.kicker{color:#4f6c43;font-size:13px;letter-spacing:3px;font-weight:700}h1{font:750 clamp(38px,5.1vw,65px)/1.16 Manrope,Arial,sans-serif;letter-spacing:-2px;margin:22px 0}.deck{font-size:23px;line-height:1.6;color:var(--muted);max-width:780px}main{max-width:1080px;margin:auto;padding:0 34px 80px}article>p,article>ul,article>ol,article>h2,article>h3,article>pre{max-width:820px;margin-left:auto;margin-right:auto}article>p:first-child{font-size:14px;color:var(--muted);margin-bottom:32px}h2{font:720 32px/1.3 Manrope,Arial,sans-serif;letter-spacing:-.7px;padding-top:32px;margin-bottom:22px}h3{font-size:23px}p{margin-top:24px;margin-bottom:24px}strong{font-weight:750}figure{margin:42px -12px}figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:18px}figcaption{color:var(--muted);font-size:13px;line-height:1.6;max-width:820px;margin:13px auto 0}table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.65;margin:32px 0}th{text-align:left;background:#e9edde;color:#1b371f;font-weight:750}td,th{padding:15px 17px;border-bottom:1px solid var(--line);vertical-align:top}td:not(:first-child){font-variant-numeric:tabular-nums}code{overflow-wrap:anywhere;font-size:.88em;background:#e9eddf;border-radius:4px;padding:2px 5px}pre{background:#132119;color:#e2ecdc;padding:25px;border-radius:15px;overflow:auto;line-height:1.65}pre code{overflow-wrap:normal;background:none;padding:0}footer{border-top:1px solid var(--line);max-width:1080px;margin:auto;padding:28px 34px 60px;color:var(--muted);font-size:13px}.resources{display:flex;gap:22px;flex-wrap:wrap}@media(max-width:650px){body{font-size:17px}.masthead{padding:18px 20px;letter-spacing:1px}.masthead>span{display:none}header{margin:40px auto 20px;padding:0 22px}h1{letter-spacing:-1.2px}.deck{font-size:20px}main{padding:0 22px 40px}h2{font-size:26px}figure{margin:30px -10px}table{font-size:12px;line-height:1.55}th,td{padding:10px 7px}footer{padding:22px}}@media print{.masthead{padding:10px}header{margin:30px auto}figure,table,pre{break-inside:avoid}h2{break-after:avoid}body{font-size:12px}a{text-decoration:none}}
+</style></head><body><div class="masthead"><div class="brand"><img src="assets/engram-mark.svg" alt="ENGRAM ENGINE logo">ENGRAM ENGINE</div><span>MEMORY / COORDINATION / EVIDENCE</span></div><header><div class="kicker">GRAPH HACKS Â· TRACK 2</div><h1>Building Persistent Agent Teams with ENGRAM ENGINE</h1><p class="deck">A release changes owner. The graph shows which work must change with it.</p></header><main><article><p><em>Engineering notes · Updated 18 October 2026 · Built for Graph Hacks Track 2</em></p>
+<figure><img alt="ENGRAM ENGINE connects a corrected fact to the work that depends on it" src="assets/cover.png" /><figcaption>ENGRAM ENGINE connects a corrected fact to the work that depends on it</figcaption></figure>
+<p>A release plan can be correct when an agent writes it and wrong an hour later. The approval owner changes. A requirement is revised. A teammate discovers that the source everyone trusted is out of date.</p>
+<p>Saving the conversation helps an agent remember what it was told. A team also needs to know <strong>which work relied on that information</strong>, whether the work is still valid, and how to revise it without erasing its history.</p>
+<p>ENGRAM ENGINE is a persistent team of AI agents with shared graph memory. LangChain DeepAgents supplies the agent harness; FalkorDB holds connected memory and the relationships that drive context retrieval and invalidation. PostgreSQL coordinates durable tasks and history. Restricted Docker containers execute and check artifacts.</p>
+<p>The central engineering question is simple: <strong>when a fact changes, which work must change with it?</strong></p>
+<p>The local build now has a completed live team scenario across a real restart, with recovery and an explicitly authorized Qwen-to-20B model change. It also has inspectable graph evidence and matched model-backed reuse measurements. Earlier infrastructure experiments below remain labeled separately.</p>
+<h2 id="a-release-workflow-makes-memory-concrete">A release workflow makes memory concrete</h2>
+<p>Consider a release called ORCHID. A researcher finds official documentation, a builder creates a capacity-checking artifact, a verifier runs independent checks, and a curator turns the successful outcome into a reusable procedure. A coordinator delegates the work and retains its progress.</p>
+<p>Then a newer source names Priya as approver where an earlier source named Maya.</p>
+<p>The completed live workflow preserves both claims, selects the current observation under an explicit policy, identifies tasks that consumed the old fact, and creates a revised plan. A replacement plan completed after a real restart, and a separate session reused the exact independently verified procedure version.</p>
+<p>The earlier 16 October infrastructure fixture left its replacement plan blocked. The separate 18 October model-backed scenario completed its repaired replacement plan. These fixtures retain separate IDs and reports; the older blocked fixture has not been relabeled as a success.</p>
+<h2 id="the-team-shares-evidence-and-keeps-its-execution-separate">The team shares evidence and keeps its execution separate</h2>
+<figure><img alt="Architecture showing the agent team, durable state, connected memory, policy decisions and restricted execution" src="assets/architecture.png" /><figcaption>Architecture showing the agent team, durable state, connected memory, policy decisions and restricted execution</figcaption></figure>
+<p>Collective uses five specialist roles. The coordinator decomposes work; researchers collect evidence; builders produce artifacts; verifiers execute checks; curators consolidate outcomes. Their roles describe responsibilities and tool permissions. Actual completion depends on persisted results and check receipts.</p>
+<p>A handoff carries evidence IDs, artifact IDs, a checkpoint and the remaining work. Published files carry SHA-256 hashes, allowing the receiving agent to check that it obtained the intended bytes. Builder and verifier execution happens in separate run containers and volumes.</p>
+<p>PostgreSQL stores conversations, task status, checkpoints, audit events and leases. Workers claim eligible tasks with <code>FOR UPDATE SKIP LOCKED</code>; lease tokens and revisions prevent an old worker from committing after ownership changes. Dependency-aware scheduling allows independent tasks to proceed while ordered work waits.</p>
+<p>This implements concurrent coordination mechanisms. It does not establish a production throughput figure: a large concurrent load benchmark remains future work.</p>
+<p>We use the <a href="https://docs.langchain.com/oss/python/deepagents/overview">DeepAgents harness</a>, but keep ENGRAM's task scheduling, resource preparation and authorization explicit. The system's shared state is persisted outside an individual model conversation.</p>
+<h2 id="three-memory-types-and-three-retrieval-tiers-solve-different-problems">Three memory types and three retrieval tiers solve different problems</h2>
+<figure><img alt="Memory ingestion and retrieval flow separating episodic, semantic and procedural memory from the retrieval tiers" src="assets/memory-flow.png" /><figcaption>Memory ingestion and retrieval flow separating episodic, semantic and procedural memory from the retrieval tiers</figcaption></figure>
+<table>
+<thead>
+<tr>
+<th>Memory type</th>
+<th>What ENGRAM retains</th>
+<th>Why the team needs it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Episodic</td>
+<td>Observations, task objectives, conversations and outcomes</td>
+<td>Recover what happened and where a conclusion came from</td>
+</tr>
+<tr>
+<td>Semantic</td>
+<td>Extracted facts and source-linked corrections</td>
+<td>Retrieve current knowledge without replaying every episode</td>
+</tr>
+<tr>
+<td>Procedural</td>
+<td>Tool descriptions and artifact-bound workflows</td>
+<td>Find relevant capabilities and repeat verified work</td>
+</tr>
+</tbody>
+</table>
+<p>These types describe the meaning of memory. The retrieval tiers describe how context reaches a run: pinned context, a revision-aware recent cache, and persistent graph retrieval. A semantic fact can be pinned or retrieved; it is not itself a storage tier.</p>
+<p>The normal observation path stores a pending episode, requests a typed admission decision, and quarantines suspicious input or archives noise. Admitted observations proceed to <a href="https://docs.mem0.ai/introduction">Mem0</a> extraction, with source links retained as facts and relationships enter the memory graph. Qdrant supports the derived vector index; local GGUF embeddings support retrieval.</p>
+<p>Task instructions remain episodes. A goal such as “find the approval owner” should not become an established world fact merely because an agent was asked to investigate it.</p>
+<p>Tools also live in procedural memory. The runtime retrieves relevant optional capabilities and combines them with the permitted core tool set. This provides a concrete mechanism for avoiding an ever-growing prompt containing every tool definition. We have not yet measured its performance with hundreds of tools.</p>
+<h2 id="falkordb-determines-which-work-becomes-stale">FalkorDB determines which work becomes stale</h2>
+<figure><img alt="Causal graph showing an old approval fact, the task that read it, its replacement fact and a revised plan" src="assets/causal-graph.png" /><figcaption>Causal graph showing an old approval fact, the task that read it, its replacement fact and a revised plan</figcaption></figure>
+<p>When a task reads memory, the runtime records the relationship:</p>
+<pre><code class="language-cypher">MATCH (t:Task)-[:DEPENDS_ON]-&gt;(m:Memory {id: $old})
+RETURN DISTINCT t.id
+</code></pre>
+<p>This is the essential invalidation pattern. The production witness query also restricts results to the authorized project, memory IDs and accessible task IDs.</p>
+<p>A correction adds <code>new Memory → SUPERSEDES → old Memory</code>. FalkorDB finds the direct readers of the old version. PostgreSQL then expands affected parents and downstream task dependencies, marks impacted work stale and increments execution revisions. A late result carrying the old lease cannot be accepted.</p>
+<p>Replanning is an explicit action. It creates <code>new Task → REPLANS → old Task</code> and binds the new task to the corrected memory through <code>DEPENDS_ON</code>. Old objectives remain historical evidence; the new coordinator is instructed to derive current work from the corrected context.</p>
+<p>This is where the graph changes execution. A similarity search may find a document mentioning the release, but it does not identify the historical task that consumed a specific superseded memory version. Without a recorded dependency edge, this traversal cannot identify that reader. Dependency tracking therefore has to happen during execution, not be reconstructed only for a presentation afterward.</p>
+<figure><img alt="Actual ENGRAM causal view showing Maya replaced by Priya, a stale reader, live graph witnesses and a blocked revised plan" src="assets/causal-ui.png" /><figcaption>Actual ENGRAM causal view showing Maya replaced by Priya, a stale reader, live graph witnesses and a blocked revised plan</figcaption></figure>
+<p>The causal view exposes the live query, direct reader IDs, supersession and revision edges. A regression checks that an unrelated task stays queued rather than invalidating the whole project. Another check ensures hidden task IDs do not appear in the explanatory traversal.</p>
+<h2 id="competing-claims-keep-their-sources">Competing claims keep their sources</h2>
+<p>The ORCHID scenario uses controlled sample observations with recorded timestamps. Maya's claim remains visible after Priya's is selected. Each immutable claim retains a source, observation time and claimant identity.</p>
+<p>Resolution is serialized per tenant, project, subject and predicate. The current policy selects the latest active source observation. Contradictory values at the same observation time remain unresolved, and the previous selected fact becomes disputed. Claimants cannot supply a different timestamp from the one recorded on their source.</p>
+<p>This is an explicit conflict policy, not a truth oracle. A newer source can still be wrong. Timestamps do not authenticate a document or grant someone approval authority. The benefit is that disagreement remains inspectable and the rule for choosing a current value is visible.</p>
+<h2 id="a-procedure-binds-instructions-to-the-files-that-passed">A procedure binds instructions to the files that passed</h2>
+<figure><img alt="Procedure lifecycle from published artifacts and source checks through independent verification to versioned reuse" src="assets/procedure-flow.png" /><figcaption>Procedure lifecycle from published artifacts and source checks through independent verification to versioned reuse</figcaption></figure>
+<p>A useful procedure needs more than a remembered sentence saying that a workflow succeeded.</p>
+<p>ENGRAM binds each procedure version to actual artifact IDs and hashes, source check events, declared conditions and the configured sandbox image. Activation requires a different verifier run to execute fresh recognized passing checks and demonstrate that its current file bytes match the manifest. The proposer cannot activate its own version.</p>
+<p>Reuse prepares that exact manifest in a new run, executes fresh checks and retains a separate receipt. A later file with the same name cannot silently replace the bound artifact. The controlled example has two versions of a capacity function; version 2 adds reserved headroom and input validation and passes a ten-test suite.</p>
+<p>The safeguards have limits. A different run is not independent human judgment, and passing tests do not prove complete correctness. Declared natural-language preconditions remain a verifier responsibility. The configured image tag is checked, but production execution is not pinned to an immutable image digest.</p>
+<h2 id="measuring-reuse-without-manufacturing-a-saving">Measuring reuse without manufacturing a saving</h2>
+<p>We ran five paired local experiments without model inference. The baseline received a known exact version 2 artifact bundle. The reuse arm loaded the active artifact-bound procedure. Both copied identical bytes into fresh containers and ran the same ten-test suite.</p>
+<p>Order alternated between pairs. Timing used a monotonic clock from resource preparation through execution and hash or receipt validation. It included container startup and mandatory reuse checks, and excluded task creation, task completion and container cleanup.</p>
+<figure><img alt="Measured paired trial timings and baseline-minus-reuse differences from the actual five-pair experiment" src="assets/reuse-evaluation.png" /><figcaption>Measured paired trial timings and baseline-minus-reuse differences from the actual five-pair experiment</figcaption></figure>
+<table>
+<thead>
+<tr>
+<th>Measurement</th>
+<th style="text-align: right;">Exact artifact bundle</th>
+<th style="text-align: right;">Verified procedure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trials</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr>
+<td>Median elapsed time</td>
+<td style="text-align: right;">5.957 s</td>
+<td style="text-align: right;">6.090 s</td>
+</tr>
+<tr>
+<td>Observed range</td>
+<td style="text-align: right;">5.897–7.229 s</td>
+<td style="text-align: right;">5.556–6.388 s</td>
+</tr>
+<tr>
+<td>Tool calls per trial</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>Pytest executions per trial</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Agent-model calls per trial</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>Agent-model tokens per trial</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>Passing tests per trial</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">10</td>
+</tr>
+</tbody>
+</table>
+<p>All ten trials passed the same ten-test suite; these are repeated executions, not one hundred distinct tests. Three pairs favored reuse and two favored the bundle. The median paired baseline-minus-reuse difference was <strong>60.1 ms</strong>, even though the separate reuse median was slower. Those are different summaries of the five observations, not contradictory measurements.</p>
+<p>The differences are small and mixed. <strong>This experiment does not demonstrate a reliable latency improvement, tool-call saving or model-token saving.</strong> It measures execution overhead against a baseline that already has correct code. It cannot establish savings from avoiding research, code generation or debugging.</p>
+<p>That result is useful. The verified-procedure path performs version and receipt checks while completing in roughly the same local time range. Its demonstrated benefit is traceable reuse of specific checked bytes. The new live pair below adds matched objectives, equal tests and actual provider receipts; repeated trials are still needed.</p>
+<figure><img alt="Actual procedure comparison panel displaying the measured medians and zero tool-call and model-token savings" src="assets/benchmark-ui.png" /><figcaption>Actual procedure comparison panel displaying the measured medians and zero tool-call and model-token savings</figcaption></figure>
+<h2 id="persistence-checks-and-current-verification">Persistence checks and current verification</h2>
+<p>The API and agent processes were restarted, and two separate fixtures were checked afterward.</p>
+<table>
+<thead>
+<tr>
+<th>Retained state</th>
+<th style="text-align: right;">Partial live Qwen fixture</th>
+<th style="text-align: right;">Controlled infrastructure fixture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authenticated session</td>
+<td style="text-align: right;">Survived</td>
+<td style="text-align: right;">Survived</td>
+</tr>
+<tr>
+<td>Memories</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td>Published artifacts with retained hashes</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>Checkpoint threads</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>Procedure versions checked by this restart report</td>
+<td style="text-align: right;">Not evaluated</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>Concurrent claims checked by this restart report</td>
+<td style="text-align: right;">Not evaluated</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>Revised plan status</td>
+<td style="text-align: right;">Not evaluated</td>
+<td style="text-align: right;">Blocked</td>
+</tr>
+</tbody>
+</table>
+<p>These 16 October results establish persistence across separate fixtures. The 18 October scenario below adds one completed story across a restart.</p>
+<table>
+<thead>
+<tr>
+<th>Evaluation</th>
+<th>Observed result</th>
+<th>Scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Local regression suite</td>
+<td>25 passed, 1 skipped</td>
+<td>The skipped case requires live provider credentials</td>
+</tr>
+<tr>
+<td>Later targeted regressions</td>
+<td>3 passed in 41.73 s</td>
+<td>Graph isolation and witnesses, procedure guards and budget ordering; overlaps earlier coverage</td>
+</tr>
+<tr>
+<td>Expanded browser flow</td>
+<td>1 passed in 3.5 s</td>
+<td>Real UI and API, hashes, benchmark display, security copy and cross-tenant denials</td>
+</tr>
+<tr>
+<td>Paired procedure experiment</td>
+<td>10 of 10 trials passed</td>
+<td>Same ten-test suite in fresh containers; no inference</td>
+</tr>
+<tr>
+<td>Bounded container probes</td>
+<td>Passed</td>
+<td>Inspected configuration, filesystem and network behavior, path denials</td>
+</tr>
+<tr>
+<td>Full autonomous Qwen workflow</td>
+<td>Unverified</td>
+<td>Daily token quota and a separate tool-argument fidelity failure remain unresolved</td>
+</tr>
+</tbody>
+</table>
+<p>These older partial runs remain historical evidence. The separate 18 October result below records the completed recovered workflow.</p>
+<h2 id="security-depends-on-enforced-boundaries">Security depends on enforced boundaries</h2>
+<figure><img alt="Actual sandbox panel describing enforced restrictions and the limits of probabilistic admission" src="assets/security-ui.png" /><figcaption>Actual sandbox panel describing enforced restrictions and the limits of probabilistic admission</figcaption></figure>
+<p>The sandbox runs as UID/GID 65534 with all capabilities dropped, privilege escalation disabled, a read-only root filesystem and no network. Each run receives its own writable volume. The launch configuration sets one CPU, 512 MiB of memory, 128 processes and command timeouts up to 120 seconds. It mounts no host directory or Docker socket and deliberately passes no provider credentials.</p>
+<p>Actual probes confirmed the configured restrictions, a denied root write, a successful run-volume write, an absent Docker socket and a failed external connection attempt. Workspace path checks returned explicit denials for traversal and outside paths.</p>
+<p>The Docker host kernel is shared. The run volume has no disk quota here, and captured output is size-checked after execution rather than while it grows. Image-baked secrets and sensitive input deliberately supplied to a task would remain visible inside the container. These probes are not evidence of resistance to kernel escapes.</p>
+<p>Safeguard admission is a separate probabilistic filter. It helps identify suspicious input before semantic extraction, but it does not grant authorization and does not guarantee protection from prompt injection. Authorization, role checks, memory visibility and task leases are enforced by code. A failed policy request does not promote its pending episode to active. Controlled internal memory commits used for infrastructure fixtures intentionally bypass this admission path.</p>
+<h2 id="completed-live-scenario-18-october-2026">Completed live scenario: 18 October 2026</h2>
+<p>The real DeepAgents coordinator dispatched researcher and builder work, published two files, acknowledged a handoff, completed independent checks and retained an artifact-bound procedure. The initial model was Qwen; after its daily token quota was exhausted, the user explicitly authorized Groq 20B to finish. An agent first recommended routing ORCHID approval to Maya. A supplied newer source named Priya. FalkorDB dependencies identified old readers and fenced stale work. After an actual API and worker restart, the repaired replacement plan completed and recommended Priya without repeating documentation research or rebuilding code. The same private session, two conversation messages, both artifact hashes and 40 original coordinator checkpoint rows survived.</p>
+<table>
+<thead>
+<tr>
+<th>Measured metric</th>
+<th style="text-align: right;">Exact artifact bundle</th>
+<th style="text-align: right;">Verified procedure</th>
+<th style="text-align: right;">Baseline minus reuse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Observed provider calls</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">+1</td>
+</tr>
+<tr>
+<td>Observed provider tokens</td>
+<td style="text-align: right;">1,823</td>
+<td style="text-align: right;">5,034</td>
+<td style="text-align: right;">-3,211</td>
+</tr>
+<tr>
+<td>Elapsed seconds, including queue/startup</td>
+<td style="text-align: right;">66.407</td>
+<td style="text-align: right;">53.918</td>
+<td style="text-align: right;">+12.489</td>
+</tr>
+</tbody>
+</table>
+<p>Both arms used Groq <code>openai/gpt-oss-20b</code>, the same two artifact versions and the same ten-test pytest suite in fresh restricted containers. The baseline received known correct files; reuse loaded the active, independently verified version 1 procedure. Both used automatic owner-authorized memory scope and disabled automatic post-run curation. Counts include recorded Groq-adapter agent, memory and admission requests attributed to each verifier. Positive signed differences favor reuse; negative values mean overhead. This is one baseline-first pair with warm shared services, not a randomized performance study or a code-generation savings estimate. Failed calls can have unknown billed tokens; SDK-internal retries are not counted individually.</p>
+<figure><img alt="Actual completed replacement plan after the correction and restart" src="assets/live-causal-graph.png" /><figcaption>Actual completed replacement plan after the correction and restart</figcaption></figure>
+<figure><img alt="Actual matched live provider comparison, with signed differences" src="assets/live-reuse-comparison.png" /><figcaption>Actual matched live provider comparison, with signed differences</figcaption></figure>
+<p>This was a recovered, multi-attempt execution, not a first-attempt or all-Qwen pass. The evidence retains 8 excluded debug comparison pilots and the stopped first replan; only the final matched pair enters the table. The correction was supplied explicitly, not autonomously discovered. Conservative context dependencies invalidated all eight historical fixture runs, so minimal semantic impact analysis is not demonstrated. The earlier exact 800-character Qwen tool-argument probe still failed (496 received); its cause is unresolved. The public Cloudflare demo remains laptop-dependent; permanent hosting is pending. The existing film predates this validation.</p>
+<p>The updated backend suite passed <strong>34 tests with one opt-in credential-dependent test skipped</strong>. Exact run, check and provider-receipt IDs are available in the companion sanitized evidence.</p>
+<!-- track2-upgrade:start -->
+<h2 id="the-next-iteration-less-context-stronger-delivery">The next iteration: less context, stronger delivery</h2>
+<p>ENGRAM now binds work to explicit memory references, loads compact context capsules and records durable memory passports with revisions, content hashes, projection fingerprints and budget accounting. Pinned obligations remain included. A reference superseded before startup is rejected; a correction racing with snapshot subscription also fails closed. Replacement plans bind the new active fact rather than treating historical quoted IDs as current instructions. Explicit full historical reads remain possible.</p>
+<p>Handoffs use deterministic delivery identities and an unclaimable <code>awaiting_handoff</code> state. The envelope and queued transition commit together. Identical retries reuse one receiver; current evidence revisions are checked before acknowledgement, and replay preserves the first acknowledgement. Private references and parents mark tasks private before enqueue. Private-memory correction events are filtered from another member's timeline, including legacy untagged events.</p>
+<h3 id="four-new-live-matched-pairs">Four new live matched pairs</h3>
+<p>All eight verifier sessions passed the same ten real pytest cases with Groq <code>openai/gpt-oss-20b</code>, identical artifact hashes, alternating order and no discarded warmup. Both paths disabled automatic post-run curation. The baseline already had known correct files; this measures verification reuse, not avoided code generation.</p>
+<table>
+<thead>
+<tr>
+<th>Median metric</th>
+<th style="text-align: right;">Known-file baseline</th>
+<th style="text-align: right;">Memory-capsule reuse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Observed provider calls</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>Provider-reported tokens</td>
+<td style="text-align: right;">1,782.0</td>
+<td style="text-align: right;">1,416.5</td>
+</tr>
+<tr>
+<td>Elapsed seconds including queue/startup</td>
+<td style="text-align: right;">28.391</td>
+<td style="text-align: right;">26.390</td>
+</tr>
+</tbody>
+</table>
+<p>Median paired savings: <strong>2 calls</strong>, <strong>365.5 observed tokens</strong> and <strong>2.001 seconds</strong>. That is 50% fewer median calls and about 20.5% fewer median tokens. Three timing pairs favored reuse; one was slower. Four local pairs cannot establish a general cost or latency guarantee. SDK-internal retries are not separately counted; failed calls can have unknown billed tokens.</p>
+<p>The exact measured runtime source is preserved under ignored <code>data/collective/track2-upgrade/measured-runtime/</code> with digest <code>d87aba1fc7b1c3f06bd2d3ffd31f3a2a654096c214c187d75939854aa51d3db8</code>. Final private-reference, stale-binding, audit-event and coordinator context/scope recovery changes were tested separately; those changes are not retroactively relabeled as the source of the four-pair measurements.</p>
+<h3 id="real-concurrency-and-crash-recovery">Real concurrency and crash recovery</h3>
+<ul>
+<li>128 direct-reference context reads at concurrency 8: <strong>70.7 operations/s</strong>, p95 <strong>968.1 ms</strong>, zero operation errors. This includes scoped retrieval and durable provenance, not semantic-search embeddings or LLM throughput.</li>
+<li>16 semantic writes at concurrency 8: <strong>20.968 seconds</strong> total, p95 <strong>14605.0 ms</strong>, zero errors. Local CPU embeddings dominate this path; it is not a FalkorDB performance claim.</li>
+<li>Eight competing corrections: one committed replacement, seven stale-revision conflicts. Exactly <strong>one of sixteen</strong> bound consumers was invalidated; fifteen unrelated consumers were preserved at correction time.</li>
+<li>Twenty concurrent identical handoffs: one receiver and one envelope. A deliberately interrupted delivery survived actual API/worker restarts, recovered into the same receiver, and retained one acknowledgement after replay.</li>
+</ul>
+<p>These load/recovery fixtures call real production functions and services with <strong>zero provider calls</strong>. They are not described as autonomous model completions. The earlier recovered end-to-end team scenario remains separately documented below.</p>
+<h3 id="final-checks-and-remaining-live-blocker">Final checks and remaining live blocker</h3>
+<p>Final real-service regression: <strong>40 passed, 1 opt-in provider test skipped</strong>. Provider inference was disabled for that suite. The live pairs above use actual provider inference separately. <strong>8 local browser checks</strong> and <strong>1 public HTTPS checks</strong> passed. Production build and Ruff passed.</p>
+<p>The additional Groq120B team workflow completed across an actual API/worker restart: checked procedure reuse, researcher-to-curator handoff, real Mem0 write-back and correction, and a replacement plan recommending Priya. The calculator verifier remained completed while the graph invalidated consumers of the changed approval fact. Earlier 20B quota and 120B scope/budget attempts remain recorded; this is not a first-attempt success. Four-pair savings remain Groq20B measurements. The original Qwen long-argument fidelity failure remains unresolved. Permanent hosting and publishing the matching source repository remain pending; the public tunnel depends on its laptop.</p>
+<p>Inspect <code>/evidence/live/</code> on the running app. <code>track2-upgrade.json</code> contains sanitized receipts and every paired observation. The Procedures page exposes Memory passports, Durable handoff receipts and the repeated live comparison without adding navigation destinations.</p>
+<figure><img alt="Actual memory passports and recovered handoff receipts" src="assets/track2-passports-desktop.png" /><figcaption>Actual memory passports and recovered handoff receipts</figcaption></figure>
+<figure><img alt="Actual four-pair live comparison in the application" src="assets/track2-live-series.png" /><figcaption>Actual four-pair live comparison in the application</figcaption></figure>
+<figure><img alt="Actual completed 120B replacement plan after restart, changing Maya to Priya" src="assets/track2-120b-causal-action.png" /><figcaption>Actual completed 120B replacement plan after restart, changing Maya to Priya</figcaption></figure>
+<!-- track2-upgrade:end -->
+
+<h2 id="what-comes-next">What comes next</h2>
+<p>The next milestone is repeating the completed workflow from a clean start without manual recovery, followed by randomized multi-pair cost measurements. The long Qwen tool-argument fidelity failure still needs investigation; additional quota alone is not a demonstrated fix.</p>
+<p>The new four-pair model-backed reuse results and concurrent read/write recovery checks above establish a first measured baseline. Next come larger counterbalanced samples, tool-discovery behavior with a larger catalog and broader mixed-role workloads after the completed 120B restart/correction workflow. Further hardening includes enforcing immutable image digests and storage quotas, and testing recovery across partial graph and SQL writes. The current build does not claim distributed atomicity or exactly-once external actions.</p>
+<p>Triton optimization and permanent hosting remain deferred. A temporary public demo is available while its host laptop is online. The immediate goal is a team whose memory, revisions and execution evidence can be inspected at every step.</p>
+<h2 id="explore-the-implementation">Explore the implementation</h2>
+<p><a href="https://github.com/ishaanv1709/ENGRAM-ENGINE">ENGRAM repository</a> · <a href="https://docs.falkordb.com/">FalkorDB documentation</a> · <a href="https://docs.langchain.com/oss/python/deepagents/overview">DeepAgents documentation</a> · <a href="https://docs.mem0.ai/introduction">Mem0 documentation</a> · <a href="https://www.wemakedevs.org/hackathons/falkordb">Graph Hacks</a></p>
+<p>The publishing package includes the measured trial data, original diagrams, Mermaid flowcharts and actual app captures. The original evaluation reflects 16 October; the new live section records 18 October 2026. The repository link identifies the project; the latest local changes must be published separately before readers can reproduce this exact revision.</p></article></main><footer><div class="resources"><a href="engram-collective.md">Editable article</a><a href="evaluation-trials.csv">Trial data CSV</a><a href="evaluation-data.json">Evaluation details</a><a href="diagrams.md">Mermaid source</a></div><p>Engineering results Â· Updated 18 October 2026 Â· Recovered live scenario, four-pair reuse and concurrency/recovery measurements included.</p></footer></body></html>

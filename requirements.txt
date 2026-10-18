@@ -1,0 +1,11 @@
+python-dotenv
+networkx
+gradio
+numpy
+hypothesis
+pytest
+llama-cpp-python
+pytest-asyncio
+matplotlib
+pyvis
+rank-bm25

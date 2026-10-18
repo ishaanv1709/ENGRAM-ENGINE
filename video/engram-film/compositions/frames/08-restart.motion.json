@@ -1,0 +1,19 @@
+{
+  "scene": "08-restart",
+  "duration_s": 20,
+  "rules": [
+    "svg-path-draw",
+    "clip-path-reveal"
+  ],
+  "entry": {
+    "vector": "up 28 px over 0.8s, power3.out",
+    "from_rest": true
+  },
+  "exit": {
+    "vector": "grid right 1.25 px/s, down 0.6 px/s",
+    "still_moving": true
+  },
+  "entry_vector": "up 28px",
+  "exit_vector": "right 1.25px/s",
+  "notes": "Parent must replace restart-proof text with measured results only after genuine restart verification. Current copy claims architecture only. assets/artifacts.png and graph.png required."
+}

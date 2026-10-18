@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=1920,height=1080" />
+<title>ENGRAM Collective — Graph Hacks Demo</title>
+<script src="assets/gsap.min.js"></script>
+<style>
+@font-face{font-family:FilmCaption;src:url('assets/DM-Sans.ttf');font-weight:100 900;font-display:block}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#0B100E}
+#engram-film-root{position:relative;width:100%;height:100%;overflow:hidden;color:#DCE5DF}
+.film-ground{position:absolute;inset:0;background:#0B100E}
+.film-scene{position:absolute;inset:0;width:100%;height:100%}
+.film-caption-rail{position:absolute;left:96px;right:96px;top:943px;height:88px;border-top:1px solid #253029;background:linear-gradient(90deg,#11191400,#111914cc 18%,#111914cc 82%,#11191400);z-index:50;box-sizing:border-box}
+.film-caption{position:absolute;left:130px;right:130px;top:966px;height:55px;display:flex;align-items:center;justify-content:center;z-index:51;box-sizing:border-box}
+.film-caption-text{font-family:FilmCaption,sans-serif;font-size:32px;line-height:1.3;font-weight:500;letter-spacing:.05px;text-align:center;color:#DCE5DF;text-shadow:0 2px 12px #000;max-width:1630px}
+.film-progress{position:absolute;left:96px;right:96px;bottom:21px;height:2px;background:#253029;z-index:52}
+.film-progress-fill{width:100%;height:2px;background:#C5E6AD;transform-origin:left center}
+.film-signature{position:absolute;right:40px;top:34px;width:34px;height:34px;object-fit:contain;opacity:.8;z-index:55}
+.film-evidence-label{position:absolute;left:96px;top:37px;z-index:55;font:500 17px FilmCaption,sans-serif;letter-spacing:1.4px;color:#87958C}
+</style>
+</head>
+<body>
+<div id="engram-film-root" data-composition-id="main" data-width="1920" data-height="1080" data-start="0" data-duration="157.033333">
+    <div id="film-ground" class="clip film-ground" data-start="0" data-duration="157.033333" data-track-index="0"></div>
+    <div id="host-01-intro" class="clip film-scene" data-composition-id="01-intro" data-composition-src="compositions/frames/01-intro.html" data-start="0.000000" data-duration="12.000000" data-track-index="1" data-width="1920" data-height="1080"></div>
+    <div id="host-02-team" class="clip film-scene" data-composition-id="02-team" data-composition-src="compositions/frames/02-team.html" data-start="12.000000" data-duration="16.300000" data-track-index="1" data-width="1920" data-height="1080"></div>
+    <div id="host-03-memory" class="clip film-scene" data-composition-id="03-memory" data-composition-src="compositions/frames/03-memory.html" data-start="28.300000" data-duration="18.566667" data-track-index="1" data-width="1920" data-height="1080"></div>
+    <div id="host-04-causal" class="clip film-scene" data-composition-id="04-causal" data-composition-src="compositions/frames/04-causal.html" data-start="46.866667" data-duration="16.000000" data-track-index="1" data-width="1920" data-height="1080"></div>
+    <div id="host-05-conflicts" class="clip film-scene" data-composition-id="05-conflicts" data-composition-src="compositions/frames/05-conflicts.html" data-start="62.866667" data-duration="18.433333" data-track-index="1" data-width="1920" data-height="1080"></div>
+    <div id="host-06-procedures" class="clip film-scene" data-composition-id="06-procedures" data-composition-src="compositions/frames/06-procedures.html" data-start="81.300000" data-duration="18.566667" data-track-index="1" data-width="1920" data-height="1080"></div>
+    <div id="host-07-security" class="clip film-scene" data-composition-id="07-security" data-composition-src="compositions/frames/07-security.html" data-start="99.866667" data-duration="19.000000" data-track-index="1" data-width="1920" data-height="1080"></div>
+    <div id="host-08-restart" class="clip film-scene" data-composition-id="08-restart" data-composition-src="compositions/frames/08-restart.html" data-start="118.866667" data-duration="20.833333" data-track-index="1" data-width="1920" data-height="1080"></div>
+    <div id="host-09-close" class="clip film-scene" data-composition-id="09-close" data-composition-src="compositions/frames/09-close.html" data-start="139.700000" data-duration="17.333333" data-track-index="1" data-width="1920" data-height="1080"></div>
+    <div id="film-caption-rail" class="clip film-caption-rail" data-start="0" data-duration="157.033333" data-track-index="19"></div>
+    <div id="caption-01" class="clip film-caption" data-start="0.000" data-duration="3.099" data-track-index="20"><span class="film-caption-text">When an agent forgets, the whole team starts over.</span></div>
+    <div id="caption-02" class="clip film-caption" data-start="3.099" data-duration="3.904" data-track-index="20"><span class="film-caption-text">Engram Collective gives agents a shared memory, a visible chain</span></div>
+    <div id="caption-03" class="clip film-caption" data-start="7.003" data-duration="2.789" data-track-index="20"><span class="film-caption-text">of evidence, and a way to carry work forward.</span></div>
+    <div id="caption-04" class="clip film-caption" data-start="12.000" data-duration="1.958" data-track-index="20"><span class="film-caption-text">A coordinator plans the work.</span></div>
+    <div id="caption-05" class="clip film-caption" data-start="13.958" data-duration="3.038" data-track-index="20"><span class="film-caption-text">Researchers and builders can run in parallel.</span></div>
+    <div id="caption-06" class="clip film-caption" data-start="16.996" data-duration="2.970" data-track-index="20"><span class="film-caption-text">Verifiers test the actual artifacts, while a</span></div>
+    <div id="caption-07" class="clip film-caption" data-start="19.966" data-duration="3.443" data-track-index="20"><span class="film-caption-text">curator turns completed work into useful knowledge.</span></div>
+    <div id="caption-08" class="clip film-caption" data-start="23.409" data-duration="3.375" data-track-index="20"><span class="film-caption-text">Handoffs carry evidence, files and remaining work.</span></div>
+    <div id="caption-09" class="clip film-caption" data-start="28.300" data-duration="2.147" data-track-index="20"><span class="film-caption-text">Episodes preserve what happened.</span></div>
+    <div id="caption-10" class="clip film-caption" data-start="30.447" data-duration="3.490" data-track-index="20"><span class="film-caption-text">Semantic memory keeps sourced facts and corrections.</span></div>
+    <div id="caption-11" class="clip film-caption" data-start="33.937" data-duration="3.624" data-track-index="20"><span class="film-caption-text">Procedural memory stores tools and verified workflows.</span></div>
+    <div id="caption-12" class="clip film-caption" data-start="37.561" data-duration="3.825" data-track-index="20"><span class="film-caption-text">Engram combines pinned context, a recent memory cache and</span></div>
+    <div id="caption-13" class="clip film-caption" data-start="41.386" data-duration="3.959" data-track-index="20"><span class="film-caption-text">graph retrieval, while Mem zero extracts and refines facts.</span></div>
+    <div id="caption-14" class="clip film-caption" data-start="46.867" data-duration="2.919" data-track-index="20"><span class="film-caption-text">A corrected fact is more than a new sentence.</span></div>
+    <div id="caption-15" class="clip film-caption" data-start="49.786" data-duration="2.919" data-track-index="20"><span class="film-caption-text">Engram follows the tasks that depended on the</span></div>
+    <div id="caption-16" class="clip film-caption" data-start="52.705" data-duration="2.984" data-track-index="20"><span class="film-caption-text">old fact, marks their results stale, and links</span></div>
+    <div id="caption-17" class="clip film-caption" data-start="55.689" data-duration="2.270" data-track-index="20"><span class="film-caption-text">a revised plan to the new evidence.</span></div>
+    <div id="caption-18" class="clip film-caption" data-start="57.959" data-duration="3.244" data-track-index="20"><span class="film-caption-text">The causal timeline makes that change inspectable.</span></div>
+    <div id="caption-19" class="clip film-caption" data-start="62.867" data-duration="2.797" data-track-index="20"><span class="film-caption-text">When agents disagree, both claims survive.</span></div>
+    <div id="caption-20" class="clip film-caption" data-start="65.664" data-duration="2.864" data-track-index="20"><span class="film-caption-text">Each keeps its source and observation time.</span></div>
+    <div id="caption-21" class="clip film-caption" data-start="68.528" data-duration="2.531" data-track-index="20"><span class="film-caption-text">The resolver selects the latest active</span></div>
+    <div id="caption-22" class="clip film-caption" data-start="71.059" data-duration="2.264" data-track-index="20"><span class="film-caption-text">evidence under an explicit policy.</span></div>
+    <div id="caption-23" class="clip film-caption" data-start="73.323" data-duration="3.264" data-track-index="20"><span class="film-caption-text">Contradictory claims at the same timestamp remain</span></div>
+    <div id="caption-24" class="clip film-caption" data-start="76.587" data-duration="3.197" data-track-index="20"><span class="film-caption-text">unresolved, instead of becoming false certainty.</span></div>
+    <div id="caption-25" class="clip film-caption" data-start="81.300" data-duration="2.615" data-track-index="20"><span class="film-caption-text">A reusable procedure is bound to exact</span></div>
+    <div id="caption-26" class="clip film-caption" data-start="83.915" data-duration="4.060" data-track-index="20"><span class="film-caption-text">artifact versions, preconditions and passing source checks.</span></div>
+    <div id="caption-27" class="clip film-caption" data-start="87.975" data-duration="4.542" data-track-index="20"><span class="film-caption-text">A different verifier must execute its own tests before activation.</span></div>
+    <div id="caption-28" class="clip film-caption" data-start="92.517" data-duration="2.546" data-track-index="20"><span class="film-caption-text">Reuse runs check those same files and</span></div>
+    <div id="caption-29" class="clip film-caption" data-start="95.063" data-duration="3.304" data-track-index="20"><span class="film-caption-text">record actual model usage and execution savings.</span></div>
+    <div id="caption-30" class="clip film-caption" data-start="99.867" data-duration="2.444" data-track-index="20"><span class="film-caption-text">Every tenant has a separate graph.</span></div>
+    <div id="caption-31" class="clip film-caption" data-start="102.311" data-duration="2.014" data-track-index="20"><span class="film-caption-text">Memory can belong to a team,</span></div>
+    <div id="caption-32" class="clip film-caption" data-start="104.325" data-duration="1.366" data-track-index="20"><span class="film-caption-text">a user or an agent.</span></div>
+    <div id="caption-33" class="clip film-caption" data-start="105.691" data-duration="3.307" data-track-index="20"><span class="film-caption-text">Code runs in isolated Docker sandboxes with no</span></div>
+    <div id="caption-34" class="clip film-caption" data-start="108.998" data-duration="3.308" data-track-index="20"><span class="film-caption-text">network, a read only root and resource limits.</span></div>
+    <div id="caption-35" class="clip film-caption" data-start="112.306" data-duration="5.033" data-track-index="20"><span class="film-caption-text">Safeguard judges memory admission; it does not grant tool permissions.</span></div>
+    <div id="caption-36" class="clip film-caption" data-start="118.867" data-duration="4.051" data-track-index="20"><span class="film-caption-text">Postgres preserves conversations, task state and checkpoints.</span></div>
+    <div id="caption-37" class="clip film-caption" data-start="122.918" data-duration="3.520" data-track-index="20"><span class="film-caption-text">FalkorDB keeps relationships and causal dependencies.</span></div>
+    <div id="caption-38" class="clip film-caption" data-start="126.438" data-duration="4.118" data-track-index="20"><span class="film-caption-text">Qdrant supports Mem zero, with local embeddings for retrieval.</span></div>
+    <div id="caption-39" class="clip film-caption" data-start="130.556" data-duration="3.786" data-track-index="20"><span class="film-caption-text">Across separate live and infrastructure fixtures, restart</span></div>
+    <div id="caption-40" class="clip film-caption" data-start="134.342" data-duration="3.853" data-track-index="20"><span class="film-caption-text">checks preserved sessions, artifact files and checkpoints.</span></div>
+    <div id="caption-41" class="clip film-caption" data-start="139.700" data-duration="3.338" data-track-index="20"><span class="film-caption-text">This is Engram Collective: an agent team designed</span></div>
+    <div id="caption-42" class="clip film-caption" data-start="143.038" data-duration="2.861" data-track-index="20"><span class="film-caption-text">to remember, coordinate and show its work.</span></div>
+    <div id="caption-43" class="clip film-caption" data-start="145.899" data-duration="5.040" data-track-index="20"><span class="film-caption-text">This walkthrough combines real app captures and infrastructure validation.</span></div>
+    <div id="caption-44" class="clip film-caption" data-start="150.939" data-duration="2.316" data-track-index="20"><span class="film-caption-text">The complete Qwen team run remains</span></div>
+    <div id="caption-45" class="clip film-caption" data-start="153.255" data-duration="1.976" data-track-index="20"><span class="film-caption-text">blocked by daily token quota.</span></div>
+    <div class="film-progress"><div class="film-progress-fill"></div></div>
+    <img id="film-signature" class="film-signature" src="assets/engram-mark.svg" alt="ENGRAM memory loop" />
+    <div id="film-evidence-label" class="film-evidence-label">LOCAL BUILD WALKTHROUGH · REAL UI &amp; INFRASTRUCTURE VALIDATION</div>
+    <audio id="film-narration" src="audio/narration.wav" data-start="0" data-duration="157.033333" data-track-index="30" data-volume="1" preload="auto"></audio>
+</div>
+<script>
+(()=>{
+  const timeline=gsap.timeline({paused:true});
+  timeline.fromTo('.film-progress-fill',{scaleX:0},{scaleX:1,duration:157.033333,ease:'none'},0);
+  window.__timelines=window.__timelines||{};
+  window.__timelines.main=timeline;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+name: engram-production
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: engram
+      POSTGRES_PASSWORD: ${ENGRAM_DATABASE_PASSWORD:?Generate the production environment first}
+      POSTGRES_DB: engram
+    ports: ["127.0.0.1:55432:5432"]
+    volumes: ["postgres:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U engram"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+  falkordb:
+    image: falkordb/falkordb:v4.16.0
+    command: ["--requirepass", "${FALKOR_PASSWORD:?Generate the production environment first}", "--appendonly", "yes"]
+    ports: ["127.0.0.1:56379:6379"]
+    volumes: ["graph:/data"]
+    restart: unless-stopped
+  qdrant:
+    image: qdrant/qdrant:v1.17.0
+    ports: ["127.0.0.1:56333:6333"]
+    volumes: ["vectors:/qdrant/storage"]
+    restart: unless-stopped
+volumes:
+  postgres:
+  graph:
+  vectors:
